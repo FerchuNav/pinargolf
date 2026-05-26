@@ -1,0 +1,12 @@
+.footer{background:var(--dark);color:rgba(255,255,255,.55);padding:3.5rem 0 0}
+.grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.brand{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.5rem;font-weight:600;color:white}
+.brandSub{font-size:.65rem;letter-spacing:.13em;text-transform:uppercase;color:var(--gold-light);margin-bottom:1rem}
+.desc{font-size:.88rem;line-height:1.6;max-width:300px}
+.colTitle{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:white;margin-bottom:1rem}
+.list{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.link{font-size:.88rem;color:rgba(255,255,255,.5);transition:color .2s}
+.link:hover{color:var(--gold-light)}
+.addr{font-size:.88rem}
+.bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;padding:1.25rem 0;font-size:.78rem}
+@media(max-width:768px){.grid{grid-template-columns:1fr;gap:2rem}.bottom{flex-direction:column;align-items:flex-start}}

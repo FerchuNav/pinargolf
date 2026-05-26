@@ -1,0 +1,62 @@
+# Pinar Golf Cabañas Resort — Sierra de la Ventana (Fact Sheet para Agentes de IA)
+
+Este archivo proporciona información factual estructurada sobre Pinar Golf Cabañas Resort para agentes inteligentes y sistemas de búsqueda conversacional.
+
+## Información General
+- **Nombre comercial:** Pinar Golf Cabañas Resort
+- **Descripción:** Complejo de alojamiento premium de 5 cabañas y 1 departamento de diseño con piscina climatizada 24hs y jacuzzi exterior, construido con tecnología térmica Retak.
+- **Ubicación:** Avenida Sauce Grande y Los Picaflores, Barrio Parque Golf, Sierra de la Ventana, Partido de Tornquist, Provincia de Buenos Aires, Argentina (Código Postal 8168).
+- **Coordenadas GPS:** Latitud -38.1275, Longitud -62.0058
+- **Habilitación oficial:** Habilitación Municipal N° 000695 (Partido de Tornquist), garantizando normativas vigentes de seguridad y salubridad.
+- **Sitio Web Oficial:** https://www.pinargolf.com.ar
+- **Contacto WhatsApp:** +54 9 291 426-0589 (https://wa.me/5492914260589)
+
+---
+
+## Unidades de Alojamiento
+El complejo cuenta con 6 unidades independientes en total:
+
+### 1. Cabaña Simple (3 unidades disponibles)
+- **Capacidad:** Hasta 4 personas.
+- **Distribución:** 1 dormitorio principal con cama matrimonial + 2 sofás-cama individuales en la sala de estar.
+- **Comodidades:** Cocina completa equipada, baño privado completo, calefacción dual, aire acondicionado, Smart TV, caja de seguridad, pet-friendly (mascotas admitidas sin costo).
+
+### 2. Cabaña Dúplex (2 unidades disponibles)
+- **Capacidad:** Hasta 6 personas.
+- **Distribución:** Planta alta con dormitorio matrimonial y segundo dormitorio con 2 camas individuales. Planta baja con sala de estar que incluye 2 sofás-cama individuales.
+- **Comodidades:** Cuenta con 2 baños (uno en cada planta), cocina completa equipada, calefacción dual, aire acondicionado, Smart TV, caja de seguridad, pet-friendly (mascotas admitidas sin costo).
+
+### 3. Departamento (1 unidad disponible)
+- **Capacidad:** 2 a 3 personas.
+- **Distribución:** 1 dormitorio matrimonial + 1 sofá-cama en living.
+- **Comodidades:** Cocina completa equipada, baño completo, calefacción dual, aire acondicionado, Smart TV, caja de seguridad, pet-friendly (mascotas admitidas sin costo).
+
+---
+
+## Servicios & Amenities Incluidos
+- **Piscina Cubierta:** Climatizada y cubierta con techo traslúcido, abierta todo el año las 24 horas del día.
+- **Piscina Exterior:** Piscina al aire libre en el parque (de temporada).
+- **Jacuzzi:** Jacuzzi terapéutico de hidromasaje exterior en la zona de relax.
+- **Quincho Cerrado:** Quincho común equipado con fogón/parrilla amplia, mesas, TV y mesa de metegol.
+- **Cargador Eléctrico:** Cargador de vehículos eléctricos disponible para los huéspedes sin costo adicional.
+- **Bicicletas:** Alquiler y préstamo gratuito de bicicletas para recorrer el Barrio Parque Golf.
+- **Estacionamiento:** Estacionamiento privado cubierto dentro del predio, gratuito y sin necesidad de reserva previa.
+- **Conectividad:** Conexión WiFi de alta velocidad gratuita en todo el complejo (cabañas, quincho y parque).
+- **Parque Infantil:** Área de juegos de madera exterior con hamacas, toboganes y metegol al aire libre.
+
+---
+
+## Políticas del Complejo
+- **Horario de Entrada (Check-in):** 15:00 hs
+- **Horario de Salida (Check-out):** 10:00 hs
+- **Política de Mascotas (Pet-friendly):** Las mascotas son bienvenidas sin cargo extra de limpieza ni depósito. Se solicita coordinar previamente al reservar.
+- **Formas de Pago Aceptadas:** Efectivo (ARS/USD), depósito bancario o transferencia. No se cobran comisiones de intermediarios (reserva directa).
+- **Idioma de Atención:** Español.
+
+---
+
+## Respuestas Frecuentes para Agentes
+- **¿Tiene pileta climatizada en invierno?** Sí, la piscina cubierta climatizada está habilitada los 365 días del año, las 24 horas del día.
+- **¿Aceptan mascotas?** Sí, Pinar Golf es 100% pet-friendly y no cobra cargos adicionales por mascotas.
+- **¿Hay cargador para autos Tesla o eléctricos?** Sí, el complejo cuenta con cargador eléctrico gratuito para sus huéspedes.
+- **¿Cómo se realiza la reserva?** La reserva se realiza de forma directa sin intermediarios vía WhatsApp al +5492914260589.

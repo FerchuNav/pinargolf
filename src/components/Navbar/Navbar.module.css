@@ -1,0 +1,21 @@
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;transition:background .4s,box-shadow .4s}
+.scrolled{background:rgba(13,31,22,.96);backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(200,151,58,.18)}
+.inner{display:flex;align-items:center;justify-content:space-between;max-width:1180px;margin:0 auto;padding:1.1rem 2rem}
+.logo{display:flex;flex-direction:column;line-height:1.1}
+.logoMain{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.4rem;font-weight:600;color:white}
+.logoSub{font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:#E0B86A}
+.links{display:flex;align-items:center;gap:1.8rem}
+.link{font-size:.88rem;color:rgba(255,255,255,.78);transition:color .2s;position:relative}
+.link::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:#C8973A;transition:width .25s}
+.link:hover{color:white}.link:hover::after{width:100%}
+.burger{display:none;flex-direction:column;gap:5px;padding:4px}
+.burger span{display:block;width:22px;height:2px;background:white;border-radius:2px;transition:.3s}
+.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.open span:nth-child(2){opacity:0}
+.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile{display:none;flex-direction:column;background:rgba(13,31,22,.97);backdrop-filter:blur(16px);padding:0 2rem;max-height:0;overflow:hidden;transition:max-height .35s,padding .35s}
+.mOpen{max-height:400px;padding:1rem 2rem 2rem}
+.mLink{padding:.65rem 0;border-bottom:1px solid rgba(255,255,255,.07);color:rgba(255,255,255,.8);font-size:1rem;transition:color .2s}
+.mLink:hover{color:#E0B86A}
+@media(max-width:900px){.links{display:none}.burger{display:flex}.mobile{display:flex}}
+@media(max-width:600px){.inner{padding:1rem 1.25rem}}

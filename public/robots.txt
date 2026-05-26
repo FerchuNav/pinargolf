@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# AI Search and LLM Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Gemini-Crawler
+Allow: /
+
+Sitemap: https://www.pinargolf.com.ar/sitemap.xml
+# AI Fact Sheet: https://www.pinargolf.com.ar/ai.txt

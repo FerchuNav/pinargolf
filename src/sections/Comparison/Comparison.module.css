@@ -1,0 +1,13 @@
+.wrap{background:var(--parchment)}
+.hdr{margin-bottom:2.5rem}
+.h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:600;color:var(--forest);line-height:1.15}
+.tableWrap{overflow-x:auto;border-radius:20px;box-shadow:var(--sh-md)}
+.table{width:100%;border-collapse:collapse;background:white;font-size:.9rem}
+.table thead tr{background:var(--forest)}
+.table thead th{color:white;padding:1.1rem 1.5rem;text-align:left;font-weight:500;font-size:.88rem}
+.table tbody tr{border-bottom:1px solid #EDE9E0;transition:background .15s}
+.table tbody tr:hover{background:#FAF7F2}
+.table tbody tr:last-child{border-bottom:none}
+.table td{padding:1rem 1.5rem;vertical-align:top;color:var(--muted);line-height:1.5}
+.feat{font-weight:600!important;color:var(--text)!important;white-space:nowrap}
+.bad{color:#EF4444;font-weight:700}.good{color:#16A34A;font-weight:700}

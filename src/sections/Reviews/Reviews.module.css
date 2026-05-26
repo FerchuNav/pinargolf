@@ -1,0 +1,19 @@
+.wrap{background:var(--cream)}
+.hdr{margin-bottom:3rem}
+.h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:600;color:var(--forest);line-height:1.15}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2.5rem}
+.card{background:white;border-radius:20px;padding:2rem 1.75rem;box-shadow:var(--sh-sm);border:1px solid rgba(0,0,0,.06);position:relative}
+.card::before{content:'"';font-family:'Cormorant Garamond',Georgia,serif;font-size:6rem;color:var(--gold);opacity:.15;position:absolute;top:-.8rem;left:1.2rem;line-height:1;pointer-events:none}
+.stars{color:#F59E0B;font-size:1rem;letter-spacing:.05em;margin-bottom:1rem}
+.quote{font-size:.94rem;color:var(--text);line-height:1.7;font-style:italic;margin-bottom:1.5rem;quotes:none}
+.author{display:flex;align-items:center;gap:.85rem}
+.avatar{width:42px;height:42px;background:var(--forest);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.82rem;flex-shrink:0}
+.aName{display:block;font-size:.9rem;color:var(--forest);font-weight:600}
+.aOrigin{display:block;font-size:.77rem;color:var(--muted);margin-top:.1rem}
+.strip{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;background:var(--forest);border-radius:20px;padding:1.75rem 2.5rem}
+.scores{display:flex;gap:3rem}
+.score{display:flex;align-items:center;gap:.75rem}
+.scoreNum{font-family:'Cormorant Garamond',Georgia,serif;font-size:2.5rem;font-weight:700;color:var(--gold);line-height:1}
+.scoreLbl{font-size:.8rem;color:rgba(255,255,255,.65);line-height:1.4}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+@media(max-width:600px){.strip{flex-direction:column;align-items:flex-start}.scores{flex-direction:column;gap:1rem}}

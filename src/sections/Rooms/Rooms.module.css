@@ -1,0 +1,67 @@
+.wrap { background: var(--dark); position: relative; }
+.wrap::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent); }
+
+.hdr { margin-bottom: 2.5rem; }
+.h2 { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.8rem,3.5vw,2.8rem); font-weight: 600; color: white; line-height: 1.15; }
+.sub { color: rgba(255,255,255,.65); font-size: 1.05rem; max-width: 720px; line-height: 1.6; }
+
+/* Lista de cards */
+.cards { display: flex; flex-direction: column; gap: 1.5rem; max-width: 980px; margin: 0 auto; }
+
+/* Card: 3 columnas */
+.card {
+  display: grid;
+  grid-template-columns: 340px 1fr 220px;
+  background: var(--charcoal);
+  border: 1px solid rgba(200,151,58,.15);
+  border-radius: 22px;
+  overflow: hidden;
+  min-height: 280px;
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s var(--ease);
+}
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(200,151,58,.38);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Columna foto */
+.colPhoto { position: relative; overflow: hidden; background: #181818; min-height: 280px; }
+.photo { width: 100%; height: 100%; object-fit: cover; display: block; }
+.arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,.5); border: none; color: white; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); transition: background .15s; z-index: 1; }
+.arrow:hover { background: rgba(0,0,0,.75); }
+.arrowL { left: 8px; }
+.arrowR { right: 8px; }
+.dots { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: flex; gap: 5px; z-index: 1; }
+.dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,.3); cursor: pointer; }
+.dotOn { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); cursor: pointer; }
+
+/* Columna specs */
+.colBody { padding: 1.6rem 1.4rem; display: flex; flex-direction: column; gap: .75rem; border-right: 1px solid rgba(255,255,255,.06); }
+.badge { display: inline-block; background: rgba(200,151,58,.15); color: var(--gold); font-size: .72rem; font-weight: 700; padding: .28rem .75rem; border-radius: 999px; letter-spacing: .06em; text-transform: uppercase; width: fit-content; }
+.name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.55rem; color: #fff; font-weight: 600; line-height: 1.2; }
+.cap { color: rgba(255,255,255,.55); font-size: .9rem; }
+.specs { display: flex; flex-wrap: wrap; gap: .45rem; }
+.pill { background: rgba(255,255,255,.06); border-radius: 8px; padding: .3rem .7rem; font-size: .82rem; color: rgba(255,255,255,.75); }
+.cta { margin-top: auto; }
+.btnCta { width: 100%; justify-content: center; }
+
+/* Columna video */
+.colVideo { padding: 1.2rem; display: flex; flex-direction: column; gap: .6rem; background: rgba(0,0,0,.15); }
+.vidLabel { font-size: .72rem; color: var(--gold); text-transform: uppercase; letter-spacing: .08em; font-weight: 700; }
+.vidThumb { position: relative; border-radius: 12px; overflow: hidden; cursor: pointer; background: #111; aspect-ratio: 15/8; border: 1.5px solid rgba(200,151,58,.2); transition: border-color .2s; }
+.vidThumb:hover { border-color: var(--gold); }
+.vidPreview { width: 100%; height: 100%; object-fit: cover; display: block; }
+.playOverlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.2); transition: background .2s; }
+.vidThumb:hover .playOverlay { background: rgba(0,0,0,.08); }
+.playBtn { width: 40px; height: 40px; background: rgba(200,151,58,.85); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,.5); transition: transform .15s, background .15s; }
+.vidThumb:hover .playBtn { transform: scale(1.1); background: var(--gold); }
+.vidTitle { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,.85), transparent); padding: .5rem .6rem .4rem; font-size: .72rem; color: rgba(255,255,255,.8); }
+
+/* Mobile */
+@media(max-width: 768px) {
+  .card { grid-template-columns: 1fr; }
+  .colBody { border-right: none; border-top: 1px solid rgba(255,255,255,.06); }
+  .colVideo { flex-direction: row; flex-wrap: wrap; gap: .5rem; }
+  .vidThumb { flex: 1; min-width: 140px; }
+}

@@ -1,0 +1,17 @@
+{
+  "short_name": "Pinar Golf",
+  "name": "Pinar Golf Cabañas Resort",
+  "description": "5 cabañas premium y 1 departamento de diseño en Sierra de la Ventana",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#1A3C2E",
+  "theme_color": "#1A3C2E",
+  "display": "standalone",
+  "orientation": "portrait"
+}
