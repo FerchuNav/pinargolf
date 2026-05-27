@@ -1,19 +1,331 @@
-.hero{position:relative;height:100vh;min-height:640px;display:flex;align-items:center;overflow:hidden;background:#0D1F16}
-.videoWrap{position:absolute;inset:-15%;width:130%;height:130%;z-index:0;will-change:transform}
-.video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(13,31,22,.68) 0%,rgba(13,31,22,.2) 50%,rgba(13,31,22,.8) 100%);z-index:1}
-.content{position:relative;z-index:2;padding-top:5rem;padding-bottom:9rem}
-.badge{display:inline-flex;background:rgba(200,151,58,.15);border:1px solid rgba(200,151,58,.4);color:#E0B86A;padding:.42rem 1.1rem;border-radius:999px;margin-bottom:1.4rem;animation:fadeDown .8s cubic-bezier(.16,1,.3,1) .15s both}
-.title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(3rem,7vw,5.8rem);font-weight:600;line-height:1.06;color:white;margin-bottom:1.2rem;animation:fadeUp .9s cubic-bezier(.16,1,.3,1) .3s both}
-.title em{font-style:italic;color:#E0B86A}
-.sub{font-size:clamp(1rem,1.8vw,1.18rem);color:rgba(255,255,255,.8);max-width:520px;margin-bottom:2rem;animation:fadeUp .9s cubic-bezier(.16,1,.3,1) .45s both}
-.btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp .9s cubic-bezier(.16,1,.3,1) .6s both}
-.stats{position:absolute;bottom:0;left:0;right:0;z-index:2;display:flex;justify-content:center;background:rgba(13,31,22,.72);backdrop-filter:blur(12px);border-top:1px solid rgba(200,151,58,.2);animation:fadeUp .9s cubic-bezier(.16,1,.3,1) .75s both}
-.stat{display:flex;flex-direction:column;align-items:center;padding:1.1rem 2.5rem;border-right:1px solid rgba(255,255,255,.07)}
-.stat:last-child{border-right:none}
-.statVal{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.9rem;font-weight:700;color:#C8973A;line-height:1;margin-bottom:.25rem}
-.statLbl{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5)}
-@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
-@keyframes fadeDown{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
-@media(max-width:768px){.stat{padding:.8rem 1.2rem;flex:1 1 50%;border-top:1px solid rgba(255,255,255,.07)}.statVal{font-size:1.5rem}}
-@media(max-width:480px){.stats{flex-wrap:wrap}}
+.hero {
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--dark);
+}
+
+.bgWrap {
+  position: absolute;
+  inset: -10%;
+  width: 120%;
+  height: 120%;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(13, 31, 22, 0.76) 0%,
+    rgba(13, 31, 22, 0.4) 50%,
+    rgba(13, 31, 22, 0.88) 100%
+  );
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  padding-top: 6rem;
+  padding-bottom: 9rem;
+  max-width: 1100px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(200, 151, 58, 0.12);
+  border: 1px solid rgba(200, 151, 58, 0.3);
+  color: var(--gold-light);
+  padding: 0.45rem 1.2rem;
+  border-radius: 999px;
+  margin-bottom: 1.8rem;
+  animation: fadeDown 0.8s var(--ease) 0.15s both;
+}
+
+.badgeText {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.title {
+  font-family: var(--heading);
+  font-size: clamp(3rem, 6.8vw, 5.4rem);
+  font-weight: 600;
+  line-height: 1.05;
+  color: white;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.015em;
+  max-width: 1000px;
+  animation: fadeUp 0.9s var(--ease) 0.3s both;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.sub {
+  font-size: clamp(1.05rem, 1.8vw, 1.18rem);
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 580px;
+  margin-bottom: 2.5rem;
+  line-height: 1.65;
+  animation: fadeUp 0.9s var(--ease) 0.45s both;
+}
+
+.btns {
+  display: flex;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  animation: fadeUp 0.9s var(--ease) 0.6s both;
+}
+
+/* Button-in-Button Outline */
+.btnBinBOutline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 0.55rem 0.6rem 0.55rem 2rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  color: white;
+  background: transparent;
+  transition: all 0.3s var(--ease);
+  cursor: pointer;
+}
+
+.btnBinBOutlineIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: all 0.3s var(--ease);
+  flex-shrink: 0;
+}
+
+.btnBinBOutline:hover {
+  border-color: white;
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.btnBinBOutline:hover .btnBinBOutlineIcon {
+  background: white;
+  color: var(--forest);
+  transform: scale(1.05);
+}
+
+.stats {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  background: rgba(13, 31, 22, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(200, 151, 58, 0.15);
+  animation: fadeUp 0.9s var(--ease) 0.75s both;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.3rem 3rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.stat:last-child {
+  border-right: none;
+}
+
+.statVal {
+  font-family: var(--heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 0.2rem;
+}
+
+.statLbl {
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* Modal de Video */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  animation: fadeIn 0.3s ease;
+}
+
+.modalContent {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  background: black;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--sh-lg);
+  border: 1px solid rgba(200, 151, 58, 0.25);
+  animation: scaleUp 0.3s var(--ease);
+}
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+.modalVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.25s var(--ease);
+}
+
+.closeBtn:hover {
+  background: var(--gold);
+  color: var(--forest);
+  border-color: var(--gold);
+  transform: scale(1.08);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 900px) {
+  .stat {
+    padding: 1.1rem 2rem;
+  }
+  .statVal {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding-top: 5.5rem;
+    padding-bottom: 7.5rem;
+  }
+  .stats {
+    flex-wrap: wrap;
+  }
+  .stat {
+    flex: 1 1 50%;
+    padding: 1.1rem;
+    border-right: none;
+  }
+  .stat:nth-child(odd) {
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .stat:nth-child(1), .stat:nth-child(2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .modal {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2.6rem;
+  }
+  .btns {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+  }
+  .btnBinBOutline {
+    padding: 0.55rem 0.6rem 0.55rem 1.5rem;
+    gap: 1rem;
+  }
+}

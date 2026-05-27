@@ -1,40 +1,86 @@
 import { useState, useEffect } from 'react'
+import { ArrowUpRight } from 'lucide-react'
 import s from './Navbar.module.css'
 
 const LINKS = [
-  { href:'#galeria', label:'Galería' },
-  { href:'#cabanas', label:'Cabañas' },
-  { href:'#servicios',label:'Servicios' },
-  { href:'#resenas', label:'Reseñas' },
-  { href:'#ubicacion',label:'Ubicación' },
+  { href: '#galeria', label: 'Galería' },
+  { href: '#cabanas', label: 'Cabañas' },
+  { href: '#servicios', label: 'Servicios' },
+  { href: '#resenas', label: 'Reseñas' },
+  { href: '#ubicacion', label: 'Ubicación' },
 ]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 60)
-    window.addEventListener('scroll', fn, { passive:true })
+    const fn = () => setScrolled(window.scrollY > 40)
+    window.addEventListener('scroll', fn, { passive: true })
     return () => window.removeEventListener('scroll', fn)
   }, [])
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => { document.body.style.overflow = '' }
+  }, [open])
+
   return (
-    <header className={`${s.nav} ${scrolled ? s.scrolled : ''}`}>
+    <header className={`${s.nav} ${scrolled ? s.scrolled : ''} ${open ? s.navOpen : ''}`}>
       <div className={s.inner}>
         <a href="#" className={s.logo}>
-          <span className={s.logoMain}>Pinar Golf</span>
-          <span className={s.logoSub}>Cabañas Resort · Sierra de la Ventana</span>
+          <span className={s.logoMain}>Pinar Golf Sierra</span>
+          <span className={s.logoSub}>Cabañas Resort</span>
         </a>
+        
         <nav className={s.links}>
-          {LINKS.map(l => <a key={l.href} href={l.href} className={s.link}>{l.label}</a>)}
-          <a href="#reservar" className="btn btn-gold" style={{fontSize:'.85rem',padding:'.55rem 1.3rem'}}>Reservar</a>
+          {LINKS.map(l => (
+            <a key={l.href} href={l.href} className={s.link}>
+              {l.label}
+            </a>
+          ))}
+          <a href="#reservar" className="btnBinB btnBinB-gold" style={{ fontSize: '0.82rem', padding: '0.4rem 0.5rem 0.4rem 1.4rem' }}>
+            <span>Reservar</span>
+            <span className="btnBinBIcon" style={{ width: '28px', height: '28px' }}>
+              <ArrowUpRight size={12} />
+            </span>
+          </a>
         </nav>
-        <button className={`${s.burger} ${open ? s.open : ''}`} onClick={() => setOpen(o=>!o)} aria-label="Menú">
-          <span/><span/><span/>
+        
+        <button 
+          className={`${s.burger} ${open ? s.open : ''}`} 
+          onClick={() => setOpen(o => !o)} 
+          aria-label="Menú de navegación"
+        >
+          <span />
+          <span />
+          <span />
         </button>
       </div>
+      
       <div className={`${s.mobile} ${open ? s.mOpen : ''}`}>
-        {LINKS.map(l => <a key={l.href} href={l.href} className={s.mLink} onClick={() => setOpen(false)}>{l.label}</a>)}
-        <a href="#reservar" className="btn btn-gold" onClick={() => setOpen(false)} style={{alignSelf:'flex-start',marginTop:'.5rem'}}>Reservar</a>
+        <div className={s.mobileInner}>
+          {LINKS.map(l => (
+            <a key={l.href} href={l.href} className={s.mLink} onClick={() => setOpen(false)}>
+              {l.label}
+            </a>
+          ))}
+          <a 
+            href="#reservar" 
+            className="btnBinB btnBinB-gold" 
+            onClick={() => setOpen(false)}
+            style={{ marginTop: '1.5rem', alignSelf: 'stretch', justifyContent: 'center' }}
+          >
+            <span>Reservar estadía</span>
+            <span className="btnBinBIcon">
+              <ArrowUpRight size={14} />
+            </span>
+          </a>
+        </div>
       </div>
     </header>
   )

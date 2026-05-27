@@ -1,12 +1,137 @@
-.wrap{background:var(--cream)}
-.hdr{margin-bottom:3.5rem}
-.h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:600;color:var(--forest);line-height:1.15;margin-bottom:.75rem}
-.sub{color:var(--muted);font-size:1rem;max-width:500px;margin-top:.5rem}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.card{background:white;border-radius:16px;padding:2rem 1.75rem;box-shadow:var(--sh-sm);border:1px solid rgba(0,0,0,.06);border-top:3px solid transparent;transition:transform .25s var(--ease),box-shadow .25s,border-top-color .25s}
-.card:hover{transform:translateY(-5px);box-shadow:var(--sh-md);border-top-color:var(--gold)}
-.icon{font-size:1.9rem;margin-bottom:1rem;line-height:1}
-.cardTitle{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.2rem;font-weight:600;color:var(--forest);margin-bottom:.5rem}
-.cardDesc{font-size:.88rem;color:var(--muted);line-height:1.65}
-@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.grid{grid-template-columns:1fr}}
+.wrap {
+  background: var(--cream);
+}
+
+.hdr {
+  margin-bottom: 3.5rem;
+}
+
+.h2 {
+  font-family: var(--heading);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 600;
+  color: var(--forest);
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+}
+
+.sub {
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 580px;
+  margin-top: 0.5rem;
+  line-height: 1.6;
+}
+
+/* Bento Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* Las clases outerShell e innerCore se manejan globalmente */
+.card {
+  padding: 0.45rem; /* Ajuste fino de padding del bisel */
+}
+
+/* Ajustes finos de hover que complementan a global.css */
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.featuredCard {
+  grid-column: span 2;
+}
+
+.featuredCard .cardInner {
+  background: linear-gradient(135deg, white 0%, rgba(200, 151, 58, 0.02) 100%);
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.8rem;
+}
+
+.iconWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(42, 89, 64, 0.05);
+  color: var(--forest);
+  padding: 0.75rem;
+  border-radius: 12px;
+  flex-shrink: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.featuredCard .iconWrapper {
+  background: rgba(200, 151, 58, 0.12);
+  color: var(--gold);
+  padding: 1rem;
+  border-radius: 14px;
+}
+
+.card:hover .iconWrapper {
+  background: var(--forest);
+  color: white;
+}
+
+.card:hover.featuredCard .iconWrapper {
+  background: var(--gold);
+  color: var(--forest);
+}
+
+.icon {
+  display: block;
+}
+
+.cardInner {
+  /* Reseteo y overrides de flexbox del innerCore */
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  padding: 2.2rem 2rem !important;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.cardTitle {
+  font-family: var(--heading);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--forest);
+}
+
+.featuredCard .cardTitle {
+  font-size: 1.45rem;
+}
+
+.cardDesc {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.featuredCard .cardDesc {
+  font-size: 0.92rem;
+}
+
+@media (max-width: 900px) {
+  .featuredCard .cardInner {
+    flex-direction: column;
+    gap: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .featuredCard {
+    grid-column: span 1;
+  }
+}

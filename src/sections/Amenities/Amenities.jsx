@@ -1,67 +1,110 @@
 import { useState } from 'react'
+import { 
+  Waves, 
+  Bed, 
+  Utensils, 
+  Trees, 
+  Zap, 
+  Compass,
+  Sun,
+  Thermometer,
+  Baby,
+  Bath,
+  Sofa,
+  Tv,
+  BedDouble,
+  Flame,
+  ChefHat,
+  Coffee,
+  Gamepad2,
+  Footprints,
+  Wifi,
+  Car,
+  Lock,
+  Clock,
+  Bike,
+  Ban,
+  Users,
+  Languages
+} from 'lucide-react'
 import s from './Amenities.module.css'
 
 const CATEGORIES = [
   {
-    key:'piscinas',
-    label:'🏊 Piletas',
-    items:[
-      {icon:'☀️',t:'Pileta al aire libre',sub:'Temporada · Todas las edades'},
-      {icon:'🌡',t:'Pileta cubierta',sub:'Climatizada · Abierta todo el año'},
-      {icon:'👶',t:'Pileta infantil',sub:'Climatizada · Segura'},
+    key: 'piscinas',
+    label: 'Piletas',
+    icon: Waves,
+    items: [
+      { icon: Sun, t: 'Pileta al aire libre', sub: 'Temporada · Todas las edades' },
+      { icon: Thermometer, t: 'Pileta cubierta', sub: 'Climatizada · Abierta todo el año' },
+      { icon: Baby, t: 'Pileta infantil', sub: 'Climatizada · Segura' },
     ]
   },
   {
-    key:'habitacion',
-    label:'🛏 Habitación',
-    items:[
-      {icon:'🛁',t:'Baño privado',sub:'Bidé · Secador de pelo · Artículos de tocador gratis'},
-      {icon:'🛋',t:'Zona de estar',sub:'Sofá · Zona de comedor · Sofá cama'},
-      {icon:'📺',t:'TV pantalla plana',sub:'Televisor en la habitación'},
-      {icon:'🛏',t:'Ropa de cama',sub:'Cama con sommier'},
+    key: 'habitacion',
+    label: 'Habitación',
+    icon: Bed,
+    items: [
+      { icon: Bath, t: 'Baño privado', sub: 'Bidé · Secador de pelo · Artículos gratis' },
+      { icon: Sofa, t: 'Zona de estar', sub: 'Sillones · Zona de comedor · Sofá cama' },
+      { icon: Tv, t: 'TV pantalla plana', sub: 'Televisor Smart en la habitación' },
+      { icon: BedDouble, t: 'Ropa de cama', sub: 'Camas equipadas con sommier' },
     ]
   },
   {
-    key:'cocina',
-    label:'🍳 Cocina',
-    items:[
-      {icon:'🔥',t:'Hornalla + Horno',sub:'Cocina completa equipada'},
-      {icon:'📡',t:'Microondas',sub:'Calentado rápido'},
-      {icon:'🍞',t:'Tostadora',sub:'Desayuno fácil'},
-      {icon:'🍽',t:'Utensilios',sub:'Mesa de comedor · Kitchenette'},
+    key: 'cocina',
+    label: 'Cocina',
+    icon: Utensils,
+    items: [
+      { icon: Flame, t: 'Cocina con horno', sub: 'Equipamiento completo para cocinar' },
+      { icon: ChefHat, t: 'Microondas', sub: 'Calentado rápido y de fácil uso' },
+      { icon: Coffee, t: 'Tostadora y pava', sub: 'Ideal para desayunos cómodos' },
+      { icon: Utensils, t: 'Vajilla completa', sub: 'Mesas, cubiertos y kitchenette' },
     ]
   },
   {
-    key:'exterior',
-    label:'🌿 Exterior',
-    items:[
-      {icon:'🔥',t:'Quincho cerrado',sub:'Parrilla · TV · Metegol'},
-      {icon:'🧺',t:'Zona de pícnic',sub:'Mobiliario exterior · Terraza · Jardín'},
-      {icon:'🎮',t:'Sala de juegos',sub:'Juegos de mesa · Puzzles · Zona infantil'},
-      {icon:'🐾',t:'Pet-friendly',sub:'Mascotas bienvenidas · Gratis'},
+    key: 'exterior',
+    label: 'Exterior',
+    icon: Trees,
+    items: [
+      { icon: Flame, t: 'Quincho cerrado', sub: 'Parrilla · TV · Metegol equipado' },
+      { icon: Trees, t: 'Zona de pícnic', sub: 'Mobiliario exterior · Terraza · Parque' },
+      { icon: Gamepad2, t: 'Sala de juegos', sub: 'Metegol y zona de esparcimiento' },
+      { icon: Footprints, t: 'Pet-friendly', sub: 'Mascotas bienvenidas en el predio' },
     ]
   },
   {
-    key:'servicios',
-    label:'⚡ Servicios',
-    items:[
-      {icon:'📶',t:'WiFi gratis',sub:'En todo el establecimiento'},
-      {icon:'🚗',t:'Estacionamiento',sub:'Gratis · Privado · Sin reserva'},
-      {icon:'🌡',t:'Calefacción + A/C',sub:'Climatización dual'},
-      {icon:'🔒',t:'Caja fuerte',sub:'Seguridad individual'},
-      {icon:'🕐',t:'Recepción 24hs',sub:'Siempre disponibles'},
-      {icon:'🚲',t:'Alquiler bicis',sub:'Explorá el Barrio Golf'},
+    key: 'servicios',
+    label: 'Servicios',
+    icon: Zap,
+    items: [
+      { icon: Wifi, t: 'WiFi gratuito', sub: 'Disponible en todo el establecimiento' },
+      { icon: Car, t: 'Estacionamiento', sub: 'Gratis · Privado · Semicubierto' },
+      { icon: Thermometer, t: 'Calefacción y A/C', sub: 'Climatización dual eficiente' },
+      { icon: Lock, t: 'Caja fuerte', sub: 'Seguridad individual en la unidad' },
+      { icon: Clock, t: 'Recepción y soporte', sub: 'Atención personalizada para paseos' },
+      { icon: Bike, t: 'Bicicletas gratuitas', sub: 'Explorá el exclusivo Barrio Golf' },
     ]
   },
   {
-    key:'actividades',
-    label:'🥾 Actividades',
-    items:[
-      {icon:'🥾',t:'Senderismo',sub:'Fuera del establecimiento'},
-      {icon:'🎣',t:'Pesca',sub:'Fuera del establecimiento'},
-      {icon:'⛳',t:'Golf',sub:'Campo a menos de 3 km'},
+    key: 'actividades',
+    label: 'Actividades',
+    icon: Compass,
+    items: [
+      { icon: Compass, t: 'Senderismo', sub: 'Cerros y circuitos de trekking cercanos' },
+      { icon: Waves, t: 'Pesca y arroyos', sub: 'Actividades en entornos naturales' },
+      { icon: Compass, t: 'Campo de Golf', sub: 'Polo de golf a menos de 3 km' },
     ]
   },
+]
+
+const HIGHLIGHTS = [
+  { icon: Car, text: 'Estacionamiento gratis' },
+  { icon: Wifi, text: 'WiFi gratis en todo el predio' },
+  { icon: Footprints, text: 'Mascotas admitidas sin cargo' },
+  { icon: Ban, text: 'Ambientes para no fumadores' },
+  { icon: Users, text: 'Cabañas familiares amplias' },
+  { icon: Languages, text: 'Atención en Español' }
 ]
 
 export default function Amenities() {
@@ -72,50 +115,63 @@ export default function Amenities() {
     <section className={`section ${s.wrap}`} id="servicios">
       <div className="container">
         <div className={`reveal ${s.hdr}`}>
-          <span className="gold-line"/>
-          <p className="label" style={{color:'var(--forest-light)',marginBottom:'.5rem'}}>Todo incluido</p>
-          <h2 className={s.h2}>Servicios y amenities</h2>
-          <p className={s.sub}>Todo lo que necesitás para una estadía perfecta, sin importar la estación del año.</p>
+          <span className="gold-line" />
+          <p className="label" style={{ color: 'var(--forest-light)', marginBottom: '.5rem' }}>Todo incluido</p>
+          <h2 className={`${s.h2} text-balance`}>Servicios y amenities</h2>
+          <p className={`${s.sub} text-pretty`}>Todo lo que necesitás para una estadía perfecta, sin sorpresas ni cargos ocultos.</p>
         </div>
 
         <div className={`reveal ${s.tabs}`}>
-          {CATEGORIES.map(c => (
-            <button key={c.key} className={`${s.tab} ${active===c.key?s.tabActive:''}`} onClick={() => setActive(c.key)}>
-              {c.label}
-            </button>
-          ))}
+          {CATEGORIES.map(c => {
+            const TabIcon = c.icon
+            return (
+              <button 
+                key={c.key} 
+                className={`${s.tab} ${active === c.key ? s.tabActive : ''}`} 
+                onClick={() => setActive(c.key)}
+              >
+                <TabIcon size={14} className={s.tabIcon} />
+                <span>{c.label}</span>
+              </button>
+            )
+          })}
         </div>
 
         <div className={s.grid} key={active}>
-          {activeCat.items.map((item,i) => (
-            <div key={item.t} className={`${s.chip} ${s.fadeIn}`} style={{animationDelay:`${i*.07}s`}}>
-              <span className={s.chipIcon}>{item.icon}</span>
-              <div>
-                <p className={s.chipTitle}>{item.t}</p>
-                <p className={s.chipSub}>{item.sub}</p>
+          {activeCat.items.map((item, i) => {
+            const ItemIcon = item.icon
+            return (
+              <div 
+                key={item.t} 
+                className={`${s.chip} ${s.fadeIn}`} 
+                style={{ animationDelay: `${i * 0.06}s` }}
+              >
+                <div className={s.chipInner}>
+                  <div className={s.chipIconWrapper}>
+                    <ItemIcon className={s.chipIcon} size={20} />
+                  </div>
+                  <div>
+                    <p className={s.chipTitle}>{item.t}</p>
+                    <p className={s.chipSub}>{item.sub}</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
 
         <div className={`reveal ${s.highlights}`}>
-          <Hi icon="🚗" text="Estacionamiento gratis · Sin reserva"/>
-          <Hi icon="📶" text="WiFi gratis en todo el establecimiento"/>
-          <Hi icon="🐾" text="Mascotas admitidas · Sin cargo"/>
-          <Hi icon="🚭" text="Habitaciones para no fumadores"/>
-          <Hi icon="👨‍👩‍👧‍👦" text="Habitaciones familiares"/>
-          <Hi icon="🇦🇷" text="Se habla Español"/>
+          {HIGHLIGHTS.map((h, i) => {
+            const HighIcon = h.icon
+            return (
+              <div key={i} className={s.hi}>
+                <HighIcon size={14} className={s.hiIcon} />
+                <span>{h.text}</span>
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>
-  )
-}
-
-function Hi({icon, text}) {
-  return (
-    <div className={s.hi}>
-      <span>{icon}</span>
-      <span>{text}</span>
-    </div>
   )
 }

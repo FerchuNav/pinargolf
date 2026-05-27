@@ -1,13 +1,152 @@
-.wrap{background:var(--parchment)}
-.hdr{margin-bottom:2.5rem}
-.h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:600;color:var(--forest);line-height:1.15}
-.tableWrap{overflow-x:auto;border-radius:20px;box-shadow:var(--sh-md)}
-.table{width:100%;border-collapse:collapse;background:white;font-size:.9rem}
-.table thead tr{background:var(--forest)}
-.table thead th{color:white;padding:1.1rem 1.5rem;text-align:left;font-weight:500;font-size:.88rem}
-.table tbody tr{border-bottom:1px solid #EDE9E0;transition:background .15s}
-.table tbody tr:hover{background:#FAF7F2}
-.table tbody tr:last-child{border-bottom:none}
-.table td{padding:1rem 1.5rem;vertical-align:top;color:var(--muted);line-height:1.5}
-.feat{font-weight:600!important;color:var(--text)!important;white-space:nowrap}
-.bad{color:#EF4444;font-weight:700}.good{color:#16A34A;font-weight:700}
+.wrap {
+  background: var(--parchment);
+}
+
+.hdr {
+  margin-bottom: 3.5rem;
+}
+
+.h2 {
+  font-family: var(--heading);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 600;
+  color: var(--forest);
+  line-height: 1.15;
+}
+
+.sub {
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 580px;
+  margin-top: 0.5rem;
+  line-height: 1.6;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  border-radius: 24px;
+  box-shadow: var(--sh-lg);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  background: white;
+  padding: 0.45rem; /* Margen del bisel para la tabla completa */
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate; /* Permite bordes específicos y redondeados en celdas */
+  border-spacing: 0;
+  font-size: 0.92rem;
+  min-width: 780px;
+  border-radius: calc(24px - 0.45rem);
+  overflow: hidden;
+}
+
+.table thead tr {
+  background: var(--forest);
+}
+
+.table thead th {
+  color: white;
+  padding: 1.4rem 1.6rem;
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.thFeat {
+  width: 20%;
+}
+
+.thTrad {
+  width: 40%;
+  color: rgba(255, 255, 255, 0.55) !important;
+  font-style: italic;
+}
+
+.thPg {
+  width: 40%;
+  color: var(--gold-light) !important;
+  font-weight: 600 !important;
+  background: rgba(200, 151, 58, 0.05);
+  border-left: 1px solid rgba(200, 151, 58, 0.15);
+  border-right: 1px solid rgba(200, 151, 58, 0.15);
+}
+
+.table tbody tr {
+  transition: background 0.2s var(--ease);
+}
+
+.table tbody tr:hover {
+  background: #fafaf7;
+}
+
+.table tbody tr td {
+  border-bottom: 1px solid #ede9e0;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table td {
+  padding: 1.3rem 1.6rem;
+  vertical-align: middle;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.feat {
+  font-weight: 600 !important;
+  color: var(--forest) !important;
+  font-size: 0.95rem;
+}
+
+.tdTrad {
+  color: #6b7280;
+}
+
+.tdPg {
+  background: rgba(200, 151, 58, 0.03);
+  color: var(--text);
+  font-weight: 500;
+  border-left: 1px solid rgba(200, 151, 58, 0.12);
+  border-right: 1px solid rgba(200, 151, 58, 0.12);
+}
+
+/* Efecto de relieve en la celda superior e inferior de Pinar Golf Sierra */
+.table tbody tr:first-child .tdPg {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.cellContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+.cellContent span {
+  display: inline-block;
+  padding-top: 1px;
+}
+
+.badIcon {
+  color: #f43f5e;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.goodIcon {
+  color: #10b981;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+@media (max-width: 768px) {
+  .table {
+    font-size: 0.88rem;
+  }
+  .table td, .table thead th {
+    padding: 1.1rem 1.25rem;
+  }
+}

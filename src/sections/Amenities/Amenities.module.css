@@ -1,47 +1,222 @@
-.wrap{background:var(--cream)}
-.hdr{margin-bottom:2.5rem}
-.h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:600;color:var(--forest);line-height:1.15;margin-bottom:.5rem}
-.sub{color:var(--muted);font-size:1rem;max-width:520px;margin-top:.4rem}
-.tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem}
-.tab{padding:.55rem 1.1rem;border-radius:999px;font-size:.82rem;font-weight:500;color:var(--muted);background:white;border:1.5px solid #E5E7EB;transition:all .2s var(--ease);cursor:pointer}
-.tab:hover{border-color:var(--gold);color:var(--forest)}
-.tabActive{background:var(--forest);color:white;border-color:var(--forest)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;margin-bottom:2.5rem}
-.chip{display:flex;align-items:center;gap:.85rem;background:white;border:1px solid rgba(0,0,0,.07);border-radius:14px;padding:1.1rem 1.2rem;transition:transform .2s var(--ease),box-shadow .2s,border-color .2s}
-.chip:hover{transform:translateY(-3px);box-shadow:var(--sh-md);border-color:rgba(200,151,58,.3)}
-.chipIcon{font-size:1.6rem;flex-shrink:0}
-.chipTitle{font-size:.87rem;font-weight:600;color:var(--forest);margin-bottom:.15rem}
-.chipSub{font-size:.75rem;color:var(--muted);line-height:1.4}
-.fadeIn{opacity:0;animation:chipFade .5s var(--ease) forwards}
-@keyframes chipFade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-.highlights{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;padding:1.2rem 1.5rem;background:var(--parchment);border-radius:14px}
-.hi{display:flex;align-items:center;gap:.45rem;font-size:.82rem;color:var(--forest);font-weight:500;background:white;padding:.45rem .85rem;border-radius:999px;border:1px solid rgba(0,0,0,.06)}
-.hi span:first-child{font-size:1rem}
-@media(max-width:1024px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.grid{grid-template-columns:1fr}.tabs{gap:.4rem}.tab{font-size:.76rem;padding:.45rem .85rem}.highlights{gap:.5rem;padding:1rem}}
+.wrap {
+  background: var(--cream);
+}
 
-.videoChip {
-  border: 1.5px solid var(--gold) !important;
-  background: var(--parchment) !important;
+.hdr {
+  margin-bottom: 2.5rem;
+}
+
+.h2 {
+  font-family: var(--heading);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 600;
+  color: var(--forest);
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+
+.sub {
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 520px;
+  margin-top: 0.4rem;
+  line-height: 1.6;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--muted);
+  background: white;
+  border: 1.5px solid #e2ded5;
+  transition: all 0.25s var(--ease);
   cursor: pointer;
 }
-.videoChip:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--sh-md);
-  background: white !important;
+
+.tabIcon {
+  opacity: 0.7;
+  transition: opacity 0.25s;
 }
-.videoPlayIcon {
-  background: var(--forest);
-  border-radius: 50%;
-  width: 38px;
-  height: 38px;
+
+.tab:hover {
+  border-color: var(--gold);
+  color: var(--forest);
+}
+
+.tab:hover .tabIcon {
+  opacity: 1;
+  color: var(--gold);
+}
+
+.tabActive {
+  background: var(--forest) !important;
+  color: white !important;
+  border-color: var(--forest) !important;
+}
+
+.tabActive .tabIcon {
+  opacity: 1;
+  color: var(--gold-light);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.1rem;
+  margin-bottom: 2.8rem;
+}
+
+/* Micro-Bisel Double-Bezel para los chips */
+.chip {
+  background: rgba(26, 60, 46, 0.03);
+  border: 1px solid rgba(26, 60, 46, 0.05);
+  border-radius: 18px;
+  padding: 0.35rem;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.25s var(--ease), background-color 0.25s var(--ease);
+}
+
+.chip:hover {
+  transform: translateY(-3px);
+  border-color: rgba(200, 151, 58, 0.2);
+  background: rgba(200, 151, 58, 0.05);
+}
+
+.chipInner {
+  background: white;
+  border-radius: calc(18px - 0.35rem);
+  padding: 1rem 1.2rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.chipIconWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 2px;
+  width: 38px;
+  height: 38px;
+  background: rgba(42, 89, 64, 0.05);
+  color: var(--forest);
+  border-radius: 50%;
   flex-shrink: 0;
-  transition: transform 0.2s var(--ease);
+  transition: background-color 0.25s, color 0.25s;
 }
-.videoChip:hover .videoPlayIcon {
-  transform: scale(1.1);
+
+.chip:hover .chipIconWrapper {
+  background: var(--forest);
+  color: white;
+}
+
+.chipIcon {
+  display: block;
+}
+
+.chipTitle {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--forest);
+  margin-bottom: 0.15rem;
+}
+
+.chipSub {
+  font-size: 0.76rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.fadeIn {
+  opacity: 0;
+  animation: chipFade 0.5s var(--ease) forwards;
+}
+
+@keyframes chipFade {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  justify-content: center;
+  padding: 1.4rem 1.6rem;
+  background: var(--parchment);
+  border-radius: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.hi {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.84rem;
+  color: var(--forest);
+  font-weight: 500;
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: var(--sh-sm);
+  transition: transform 0.2s;
+}
+
+.hi:hover {
+  transform: translateY(-1px);
+}
+
+.hiIcon {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    margin-bottom: 2rem;
+  }
+  .tabs {
+    gap: 0.4rem;
+  }
+  .tab {
+    font-size: 0.78rem;
+    padding: 0.5rem 1rem;
+  }
+  .highlights {
+    gap: 0.6rem;
+    padding: 1.1rem;
+  }
+  .hi {
+    font-size: 0.78rem;
+    padding: 0.4rem 0.8rem;
+  }
 }
