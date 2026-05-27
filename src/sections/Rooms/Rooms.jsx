@@ -41,20 +41,51 @@ export default function Rooms() {
           <h2 className={`${s.h2} text-balance`}>5 Cabañas + 1 Departamento</h2>
           <p className={`${s.sub} text-pretty`}>
             Todas las unidades cuentan con construcción Retak de alta eficiencia térmica,
-            2 piletas (cubierta climatizada + al aire libre) y acceso directo al Parque Tornquist.
-            Diseñadas para parejas, familias y grupos que buscan el mejor descanso en la Comarca.
+            piscina cubierta climatizada y al aire libre, y acceso directo al golf.
+            Diseñadas para el descanso absoluto en la Comarca.
           </p>
         </div>
 
         <div className={s.cards}>
-          {CABINS.map(cabin => (
-            <CabinCard
-              key={cabin.id}
-              cabin={cabin}
-              onVideoOpen={(idx) => setModal({ videos: cabin.videos, initialIdx: idx })}
-              onPhotoOpen={(idx) => setPhotoModal({ photos: cabin.photos, initialIdx: idx, title: cabin.name })}
-            />
-          ))}
+          {CABINS.map(cabin => {
+            const isWide = cabin.id === 'duplex'
+            return (
+              <CabinCard
+                key={cabin.id}
+                cabin={cabin}
+                isWide={isWide}
+                onVideoOpen={(idx) => setModal({ videos: cabin.videos, initialIdx: idx })}
+                onPhotoOpen={(idx) => setPhotoModal({ photos: cabin.photos, initialIdx: idx, title: cabin.name })}
+              />
+            )
+          })}
+
+          {/* Tarjeta Informativa Bento (col-span-8) */}
+          <div className={`reveal outerShell ${s.infoCard}`}>
+            <div className={`innerCore ${s.infoCardInner}`}>
+              <div className={s.infoTextCol}>
+                <span className={s.infoBadge}>Servicios Incluidos</span>
+                <h4 className={s.infoTitle}>Experiencia Pinar Golf</h4>
+                <p className={s.infoDesc}>
+                  Tu estadía incluye acceso completo a instalaciones diseñadas para la desconexión total. 
+                  Disfruta del entorno único de Parque Golf sin preocupaciones.
+                </p>
+                <ul className={s.infoList}>
+                  <li>Piscina cubierta climatizada 24 hs</li>
+                  <li>Piscina exterior de temporada con solárium</li>
+                  <li>Bicicletas de paseo a disposición</li>
+                  <li>Juegos infantiles y amplio parque</li>
+                  <li>Parrilla individual y estacionamiento semicubierto</li>
+                </ul>
+              </div>
+              <div className={s.infoImageCol}>
+                <div 
+                  className={s.infoBgImage} 
+                  style={{ backgroundImage: "url('/images/pileta/pileta-cubierta-01.webp')" }}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -78,7 +109,7 @@ export default function Rooms() {
   )
 }
 
-function CabinCard({ cabin, onVideoOpen, onPhotoOpen }) {
+function CabinCard({ cabin, isWide, onVideoOpen, onPhotoOpen }) {
   const [photoIdx, setPhotoIdx] = useState(0)
   const videoRefs = useRef([])
   const touchStartX = useRef(null)
@@ -116,7 +147,7 @@ function CabinCard({ cabin, onVideoOpen, onPhotoOpen }) {
   )
 
   return (
-    <div className={`reveal outerShell ${s.card}`}>
+    <div className={`reveal outerShell ${s.card} ${isWide ? s.cardWide : s.cardNarrow}`}>
       {/* Columna interna que implementa el grid de contenido */}
       <div className={`innerCore ${s.cardInner}`}>
         {/* Columna izquierda: galería */}

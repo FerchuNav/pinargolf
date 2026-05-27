@@ -1,26 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --forest:       #1A3C2E;
-  --forest-mid:   #2A5940;
-  --forest-light: #3D7A57;
-  --gold:         #C8973A;
-  --gold-light:   #E0B86A;
-  --gold-pale:    #F5ECD5;
-  --cream:        #FAF8F3;
-  --parchment:    #F0EBE0;
-  --dark:         #0D1F16;
-  --charcoal:     #1C2B22;
-  --text:         #1A1A14;
-  --muted:        #5A6358;
+  --forest:       #0A1310; /* Luxury Forest (Negro con matiz verde) */
+  --forest-mid:   #14241F;
+  --forest-light: #203B32;
+  --gold:         #C5A880; /* Oro viejo desaturado */
+  --gold-light:   #DFCEB6;
+  --gold-pale:    #F2EAE0;
+  --cream:        #FAF7F2; /* Crema papel fisico */
+  --parchment:    #ECE7DE;
+  --dark:         #050A08;
+  --charcoal:     #101C19;
+  --text:         #17221E;
+  --muted:        #5C6B65;
   --wsp:          #25D366;
   --wsp-dark:     #128C7E;
   --heading: 'Cormorant Garamond', Georgia, serif;
-  --body:    'DM Sans', system-ui, sans-serif;
-  --ease:    cubic-bezier(0.16, 1, 0.3, 1);
-  --sh-sm:   0 4px 12px rgba(26, 60, 46, 0.04);
-  --sh-md:   0 12px 30px rgba(26, 60, 46, 0.08);
-  --sh-lg:   0 24px 60px rgba(13, 31, 22, 0.16);
+  --body:    'Plus Jakarta Sans', system-ui, sans-serif;
+  --ease:    cubic-bezier(0.25, 1, 0.3, 1); /* Inercia spring premium */
+  --sh-sm:   0 8px 24px rgba(10, 19, 16, 0.03);
+  --sh-md:   0 16px 40px rgba(10, 19, 16, 0.06);
+  --sh-lg:   0 32px 80px rgba(5, 10, 8, 0.12);
 }
 
 *, *::before, *::after {
@@ -40,6 +40,21 @@ body {
   color: var(--text);
   line-height: 1.65;
   overflow-x: hidden;
+  position: relative;
+}
+
+/* Grano/ruido texturizado premium en el fondo */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.02;
+  pointer-events: none;
+  z-index: 9999;
 }
 
 img {
@@ -60,11 +75,11 @@ button {
   background: none;
 }
 
-/* Scroll reveal — fade up */
+/* Scroll reveal — spring fade up */
 .reveal {
   opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+  transform: translateY(32px) scale(0.98);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
 }
 .reveal.visible {
   opacity: 1;
@@ -74,8 +89,8 @@ button {
 /* Reveal from left */
 .reveal-left {
   opacity: 0;
-  transform: translateX(-40px);
-  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+  transform: translateX(-40px) scale(0.99);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
 }
 .reveal-left.visible {
   opacity: 1;
@@ -85,19 +100,19 @@ button {
 /* Reveal from right */
 .reveal-right {
   opacity: 0;
-  transform: translateX(40px);
-  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+  transform: translateX(40px) scale(0.99);
+  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
 }
 .reveal-right.visible {
   opacity: 1;
   transform: none;
 }
 
-/* Scale in (for images) */
+/* Scale in */
 .reveal-scale {
   opacity: 0;
-  transform: scale(0.94);
-  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+  transform: scale(0.92);
+  transition: opacity 1s var(--ease), transform 1s var(--ease);
 }
 .reveal-scale.visible {
   opacity: 1;
@@ -106,13 +121,13 @@ button {
 
 /* Stagger children animations */
 .stagger .reveal:nth-child(1) { transition-delay: 0s; }
-.stagger .reveal:nth-child(2) { transition-delay: 0.08s; }
-.stagger .reveal:nth-child(3) { transition-delay: 0.16s; }
-.stagger .reveal:nth-child(4) { transition-delay: 0.24s; }
-.stagger .reveal:nth-child(5) { transition-delay: 0.32s; }
-.stagger .reveal:nth-child(6) { transition-delay: 0.4s; }
-.stagger .reveal:nth-child(7) { transition-delay: 0.48s; }
-.stagger .reveal:nth-child(8) { transition-delay: 0.56s; }
+.stagger .reveal:nth-child(2) { transition-delay: 0.06s; }
+.stagger .reveal:nth-child(3) { transition-delay: 0.12s; }
+.stagger .reveal:nth-child(4) { transition-delay: 0.18s; }
+.stagger .reveal:nth-child(5) { transition-delay: 0.24s; }
+.stagger .reveal:nth-child(6) { transition-delay: 0.3s; }
+.stagger .reveal:nth-child(7) { transition-delay: 0.36s; }
+.stagger .reveal:nth-child(8) { transition-delay: 0.42s; }
 
 /* Buttons */
 .btn {
@@ -237,28 +252,35 @@ button {
 
 /* Double-Bezel Card Architecture */
 .outerShell {
-  background: rgba(26, 60, 46, 0.04);
-  border: 1px solid rgba(26, 60, 46, 0.06);
-  padding: 0.5rem;
-  border-radius: 2.2rem;
-  transition: all 0.4s var(--ease);
+  background: rgba(10, 19, 16, 0.02);
+  border: 1px solid rgba(10, 19, 16, 0.04);
+  padding: 0.55rem;
+  border-radius: 2.5rem;
+  transition: all 0.5s var(--ease);
 }
 
 .innerCore {
   background: white;
-  border-radius: calc(2.2rem - 0.5rem);
-  padding: 2.2rem 2rem;
-  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6);
-  border: 1px solid rgba(0, 0, 0, 0.02);
+  border-radius: calc(2.5rem - 0.55rem);
+  padding: 2.5rem 2.2rem;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(10, 19, 16, 0.02);
   height: 100%;
   display: flex;
   flex-direction: column;
-  transition: all 0.4s var(--ease);
+  transition: all 0.5s var(--ease);
 }
 
 .outerShell:hover {
-  background: rgba(200, 151, 58, 0.08);
-  border-color: rgba(200, 151, 58, 0.15);
+  background: rgba(197, 168, 128, 0.06);
+  border-color: rgba(197, 168, 128, 0.16);
+  transform: translateY(-4px);
+  box-shadow: var(--sh-md);
+}
+
+.btn:active, .btnBinB:active {
+  transform: scale(0.97) !important;
+  transition-duration: 0.15s;
 }
 
 /* Typography Micro-Images */

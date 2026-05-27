@@ -10,14 +10,7 @@ const STATS = [
 ]
 
 export default function Hero() {
-  const [y, setY] = useState(0)
   const [videoOpen, setVideoOpen] = useState(false)
-
-  useEffect(() => {
-    const onScroll = () => setY(window.scrollY)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
 
   useEffect(() => {
     if (videoOpen) {
@@ -30,60 +23,97 @@ export default function Hero() {
 
   return (
     <section className={s.hero} id="inicio">
-      {/* Fondo con imagen aérea y efecto parallax */}
-      <div 
-        className={s.bgWrap} 
-        style={{ 
-          transform: `translateY(${y * 0.25}px)`,
-          backgroundImage: "url('/images/exterior/vista-aerea.webp')"
-        }}
-      />
-      <div className={s.overlay} />
-
-      <div className={`container ${s.content}`}>
-        <div className={`reveal ${s.badge}`}>
-          <span className={s.badgeText}>
-            Barrio Parque Golf · Sierra de la Ventana
-          </span>
+      <div className={`container ${s.gridContainer}`}>
+        {/* Lado Izquierdo: Textos e Informacion */}
+        <div className={`reveal-left ${s.leftCol}`}>
+          <div className={s.badge}>
+            <span className={s.badgeText}>
+              Barrio Parque Golf · Sierra de la Ventana
+            </span>
+          </div>
+          
+          <h1 className={`${s.title} text-balance`}>
+            Tu refugio 
+            <span 
+              className="inlineImg" 
+              style={{ backgroundImage: "url('/images/exterior/pergola-flores-02.webp')" }} 
+            />
+            en el corazón de la comarca 
+            <span 
+              className="inlineImg" 
+              style={{ backgroundImage: "url('/images/pileta/pileta-exterior-01.webp')" }} 
+            />
+            serrana
+          </h1>
+          
+          <p className={`${s.sub} text-pretty`}>
+            Cabañas y departamentos de diseño en un entorno natural único. Piscina climatizada cubierta, 
+            jacuzzi exterior y acceso exclusivo al golf y al río Sauce Grande.
+          </p>
+          
+          <div className={s.btns}>
+            <a href="#reservar" className="btnBinB btnBinB-gold">
+              <span>Reservar ahora</span>
+              <span className="btnBinBIcon">
+                <ArrowUpRight size={14} />
+              </span>
+            </a>
+            <button onClick={() => setVideoOpen(true)} className={s.btnBinBOutline}>
+              <span>Ver video tour</span>
+              <span className={s.btnBinBOutlineIcon}>
+                <Play size={12} fill="currentColor" />
+              </span>
+            </button>
+          </div>
         </div>
-        
-        <h1 className={`${s.title} text-balance`}>
-          Tu refugio en el 
-          <span 
-            className="inlineImg" 
-            style={{ backgroundImage: "url('/images/exterior/pergola-flores-02.webp')" }} 
-          />
-          corazón de la Comarca
-        </h1>
-        
-        <p className={`${s.sub} text-pretty`}>
-          Cabañas y departamentos de diseño en un entorno natural único. Piscina climatizada cubierta, 
-          jacuzzi exterior y acceso exclusivo al golf y al Parque Tornquist.
-        </p>
-        
-        <div className={s.btns}>
-          <a href="#reservar" className="btnBinB btnBinB-gold">
-            <span>Reservar ahora</span>
-            <span className="btnBinBIcon">
-              <ArrowUpRight size={14} />
-            </span>
-          </a>
-          <button onClick={() => setVideoOpen(true)} className={`${s.btnBinBOutline}`}>
-            <span>Ver video tour</span>
-            <span className={s.btnBinBOutlineIcon}>
-              <Play size={12} fill="currentColor" />
-            </span>
-          </button>
+
+        {/* Lado Derecho: Cascada Visual Z-Axis */}
+        <div className={`reveal-right ${s.rightCol}`}>
+          <div className={s.cascadeWrapper}>
+            {/* Foto 1: Exterior / Aérea */}
+            <div className={`outerShell ${s.cascadeCard} ${s.cardBack}`}>
+              <div className={`innerCore ${s.cardInner}`}>
+                <img 
+                  src="/images/exterior/vista-aerea.webp" 
+                  alt="Vista aérea del resort Pinar Golf"
+                  className={s.cascadeImg}
+                />
+              </div>
+            </div>
+            {/* Foto 2: Interior */}
+            <div className={`outerShell ${s.cascadeCard} ${s.cardMid}`}>
+              <div className={`innerCore ${s.cardInner}`}>
+                <img 
+                  src="/images/interior/living-comedor.webp" 
+                  alt="Interior acogedor de las cabañas"
+                  className={s.cascadeImg}
+                />
+              </div>
+            </div>
+            {/* Foto 3: Detalle / Pileta */}
+            <div className={`outerShell ${s.cascadeCard} ${s.cardFront}`}>
+              <div className={`innerCore ${s.cardInner}`}>
+                <img 
+                  src="/images/pileta/pileta-exterior-01.webp" 
+                  alt="Piscina exterior del resort"
+                  className={s.cascadeImg}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className={s.stats}>
-        {STATS.map(stat => (
-          <div key={stat.l} className={s.stat}>
-            <strong className={s.statVal}>{stat.v}</strong>
-            <span className={s.statLbl}>{stat.l}</span>
-          </div>
-        ))}
+      {/* Barra de Estadisticas en el Pie */}
+      <div className={s.statsBar}>
+        <div className={`container ${s.statsContainer}`}>
+          {STATS.map(stat => (
+            <div key={stat.l} className={s.stat}>
+              <strong className={s.statVal}>{stat.v}</strong>
+              <span className={s.statLbl}>{stat.l}</span>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* Modal de video optimizado */}

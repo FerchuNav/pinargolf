@@ -35,9 +35,9 @@ const CATEGORIES = [
     label: 'Piletas',
     icon: Waves,
     items: [
-      { icon: Sun, t: 'Pileta al aire libre', sub: 'Temporada · Todas las edades' },
-      { icon: Thermometer, t: 'Pileta cubierta', sub: 'Climatizada · Abierta todo el año' },
-      { icon: Baby, t: 'Pileta infantil', sub: 'Climatizada · Segura' },
+      { icon: Sun, t: 'Pileta al aire libre', sub: 'Temporada · Todas las edades', size: 'narrow' },
+      { icon: Thermometer, t: 'Pileta cubierta', sub: 'Climatizada · Abierta todo el año', size: 'wide' },
+      { icon: Baby, t: 'Pileta infantil', sub: 'Climatizada · Segura', size: 'narrow' },
     ]
   },
   {
@@ -45,10 +45,10 @@ const CATEGORIES = [
     label: 'Habitación',
     icon: Bed,
     items: [
-      { icon: Bath, t: 'Baño privado', sub: 'Bidé · Secador de pelo · Artículos gratis' },
-      { icon: Sofa, t: 'Zona de estar', sub: 'Sillones · Zona de comedor · Sofá cama' },
-      { icon: Tv, t: 'TV pantalla plana', sub: 'Televisor Smart en la habitación' },
-      { icon: BedDouble, t: 'Ropa de cama', sub: 'Camas equipadas con sommier' },
+      { icon: Bath, t: 'Baño privado', sub: 'Bidé · Secador de pelo · Artículos gratis', size: 'narrow' },
+      { icon: Sofa, t: 'Zona de estar', sub: 'Sillones · Zona de comedor · Sofá cama', size: 'wide' },
+      { icon: Tv, t: 'TV pantalla plana', sub: 'Televisor Smart en la habitación', size: 'narrow' },
+      { icon: BedDouble, t: 'Ropa de cama', sub: 'Camas equipadas con sommier', size: 'narrow' },
     ]
   },
   {
@@ -56,10 +56,10 @@ const CATEGORIES = [
     label: 'Cocina',
     icon: Utensils,
     items: [
-      { icon: Flame, t: 'Cocina con horno', sub: 'Equipamiento completo para cocinar' },
-      { icon: ChefHat, t: 'Microondas', sub: 'Calentado rápido y de fácil uso' },
-      { icon: Coffee, t: 'Tostadora y pava', sub: 'Ideal para desayunos cómodos' },
-      { icon: Utensils, t: 'Vajilla completa', sub: 'Mesas, cubiertos y kitchenette' },
+      { icon: Flame, t: 'Cocina con horno', sub: 'Equipamiento completo para cocinar', size: 'wide' },
+      { icon: ChefHat, t: 'Microondas', sub: 'Calentado rápido y de fácil uso', size: 'narrow' },
+      { icon: Coffee, t: 'Tostadora y pava', sub: 'Ideal para desayunos cómodos', size: 'narrow' },
+      { icon: Utensils, t: 'Vajilla completa', sub: 'Mesas, cubiertos y kitchenette', size: 'narrow' },
     ]
   },
   {
@@ -67,10 +67,10 @@ const CATEGORIES = [
     label: 'Exterior',
     icon: Trees,
     items: [
-      { icon: Flame, t: 'Quincho cerrado', sub: 'Parrilla · TV · Metegol equipado' },
-      { icon: Trees, t: 'Zona de pícnic', sub: 'Mobiliario exterior · Terraza · Parque' },
-      { icon: Gamepad2, t: 'Sala de juegos', sub: 'Metegol y zona de esparcimiento' },
-      { icon: Footprints, t: 'Pet-friendly', sub: 'Mascotas bienvenidas en el predio' },
+      { icon: Flame, t: 'Quincho cerrado', sub: 'Parrilla · TV · Metegol equipado', size: 'wide' },
+      { icon: Trees, t: 'Zona de pícnic', sub: 'Mobiliario exterior · Terraza · Parque', size: 'narrow' },
+      { icon: Gamepad2, t: 'Sala de juegos', sub: 'Metegol y zona de esparcimiento', size: 'narrow' },
+      { icon: Footprints, t: 'Pet-friendly', sub: 'Mascotas bienvenidas en el predio', size: 'narrow' },
     ]
   },
   {
@@ -78,12 +78,12 @@ const CATEGORIES = [
     label: 'Servicios',
     icon: Zap,
     items: [
-      { icon: Wifi, t: 'WiFi gratuito', sub: 'Disponible en todo el establecimiento' },
-      { icon: Car, t: 'Estacionamiento', sub: 'Gratis · Privado · Semicubierto' },
-      { icon: Thermometer, t: 'Calefacción y A/C', sub: 'Climatización dual eficiente' },
-      { icon: Lock, t: 'Caja fuerte', sub: 'Seguridad individual en la unidad' },
-      { icon: Clock, t: 'Recepción y soporte', sub: 'Atención personalizada para paseos' },
-      { icon: Bike, t: 'Bicicletas gratuitas', sub: 'Explorá el exclusivo Barrio Golf' },
+      { icon: Wifi, t: 'WiFi gratuito', sub: 'Disponible en todo el establecimiento', size: 'narrow' },
+      { icon: Car, t: 'Estacionamiento', sub: 'Gratis · Privado · Semicubierto', size: 'wide' },
+      { icon: Thermometer, t: 'Calefacción y A/C', sub: 'Climatización dual eficiente', size: 'narrow' },
+      { icon: Lock, t: 'Caja fuerte', sub: 'Seguridad individual en la unidad', size: 'narrow' },
+      { icon: Clock, t: 'Recepción y soporte', sub: 'Atención personalizada para paseos', size: 'narrow' },
+      { icon: Bike, t: 'Bicicletas gratuitas', sub: 'Explorá el exclusivo Barrio Golf', size: 'narrow' },
     ]
   },
   {
@@ -91,9 +91,9 @@ const CATEGORIES = [
     label: 'Actividades',
     icon: Compass,
     items: [
-      { icon: Compass, t: 'Senderismo', sub: 'Cerros y circuitos de trekking cercanos' },
-      { icon: Waves, t: 'Pesca y arroyos', sub: 'Actividades en entornos naturales' },
-      { icon: Compass, t: 'Campo de Golf', sub: 'Polo de golf a menos de 3 km' },
+      { icon: Compass, t: 'Senderismo', sub: 'Cerros y circuitos de trekking cercanos', size: 'narrow' },
+      { icon: Waves, t: 'Pesca y arroyos', sub: 'Actividades en entornos naturales', size: 'narrow' },
+      { icon: Compass, t: 'Campo de Golf', sub: 'Polo de golf a menos de 3 km', size: 'wide' },
     ]
   },
 ]
@@ -143,7 +143,7 @@ export default function Amenities() {
             return (
               <div 
                 key={item.t} 
-                className={`${s.chip} ${s.fadeIn}`} 
+                className={`${s.chip} ${item.size === 'wide' ? s.chipWide : s.chipNarrow} ${s.fadeIn}`} 
                 style={{ animationDelay: `${i * 0.06}s` }}
               >
                 <div className={s.chipInner}>
