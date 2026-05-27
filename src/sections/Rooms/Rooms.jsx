@@ -79,9 +79,10 @@ export default function Rooms() {
                 </ul>
               </div>
               <div className={s.infoImageCol}>
-                <div 
-                  className={s.infoBgImage} 
-                  style={{ backgroundImage: "url('/images/pileta/pileta-cubierta-01.webp')" }}
+                <img 
+                  src="/images/pileta/pileta-cubierta-01.webp" 
+                  alt="Piscina cubierta climatizada"
+                  className={s.infoImg}
                 />
               </div>
             </div>
