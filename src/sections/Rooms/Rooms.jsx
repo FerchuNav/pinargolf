@@ -109,7 +109,7 @@ export default function Rooms() {
   )
 }
 
-function CabinCard({ cabin, isWide, onVideoOpen, onPhotoOpen }) {
+function CabinCard({ cabin, onVideoOpen, onPhotoOpen }) {
   const [photoIdx, setPhotoIdx] = useState(0)
   const videoRefs = useRef([])
   const touchStartX = useRef(null)
@@ -147,7 +147,7 @@ function CabinCard({ cabin, isWide, onVideoOpen, onPhotoOpen }) {
   )
 
   return (
-    <div className={`reveal outerShell ${s.card} ${isWide ? s.cardWide : s.cardNarrow}`}>
+    <div className={`reveal outerShell ${s.card}`}>
       {/* Columna interna que implementa el grid de contenido */}
       <div className={`innerCore ${s.cardInner}`}>
         {/* Columna izquierda: galería */}
@@ -184,77 +184,87 @@ function CabinCard({ cabin, isWide, onVideoOpen, onPhotoOpen }) {
           )}
         </div>
 
-        {/* Columna central: specs */}
-        <div className={s.colBody}>
-          <span className={s.badge}>
-            {cabin.count} {cabin.count === 1 ? 'unidad disponible' : 'unidades disponibles'}
-          </span>
-          <h3 className={s.name}>{cabin.name}</h3>
-          <p className={s.cap}>
-            <Users size={14} className={s.capIcon} />
-            <span>{cabin.capacityLabel}</span>
-          </p>
-          <div className={s.specs}>
-            {cabin.specs.map((spec, i) => {
-              const Icon = SPEC_ICONS[spec.icon] || BedDouble
-              return (
-                <span key={i} className={s.pill}>
-                  <Icon size={13} className={s.pillIcon} />
-                  <span>{spec.text}</span>
-                </span>
-              )
-            })}
+        {/* Columna derecha: contenido y acciones */}
+        <div className={s.colContent}>
+          {/* Informacion */}
+          <div className={s.infoPart}>
+            <span className={s.badge}>
+              {cabin.count} {cabin.count === 1 ? 'unidad disponible' : 'unidades disponibles'}
+            </span>
+            <h3 className={s.name}>{cabin.name}</h3>
+            <p className={s.cap}>
+              <Users size={14} className={s.capIcon} />
+              <span>{cabin.capacityLabel}</span>
+            </p>
+            <div className={s.specs}>
+              {cabin.specs.map((spec, i) => {
+                const Icon = SPEC_ICONS[spec.icon] || BedDouble
+                return (
+                  <span key={i} className={s.pill}>
+                    <Icon size={13} className={s.pillIcon} />
+                    <span>{spec.text}</span>
+                  </span>
+                )
+              })}
+            </div>
           </div>
-          <div className={s.cta}>
-            <a
-              href={`https://wa.me/5492914260589?text=${waMsg}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btnBinB btnBinB-gold"
-              style={{ width: '100%' }}
-            >
-              <span>Consultar disponibilidad</span>
-              <span className="btnBinBIcon">
-                <ArrowUpRight size={14} />
-              </span>
-            </a>
-          </div>
-        </div>
 
-        {/* Columna derecha: video preview */}
-        <div className={s.colVideo}>
-          <p className={s.vidLabel}>
-            <Video size={12} className={s.vidLabelIcon} />
-            <span>Tour virtual{cabin.videos.length > 1 ? ` · ${cabin.videos.length} vids` : ''}</span>
-          </p>
-          {cabin.videos.map((vid, i) => {
-            const isImage = vid.thumb && /\.(webp|jpg|jpeg|png|gif|svg)$/i.test(vid.thumb);
-            return (
-              <div key={i} className={s.vidThumb} onClick={() => onVideoOpen(i)}>
-                {isImage ? (
-                  <img src={vid.thumb} alt={vid.label} className={s.vidPreview} />
-                ) : (
-                  <video
-                    ref={el => { videoRefs.current[i] = el }}
-                    src={vid.thumb}
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    className={s.vidPreview}
-                  />
-                )}
-                <div className={s.playOverlay}>
-                  <div className={s.playBtn}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
-                      <polygon points="6 4 20 12 6 20" />
-                    </svg>
-                  </div>
+          {/* Videos y CTA */}
+          <div className={s.actionPart}>
+            {cabin.videos && cabin.videos.length > 0 && (
+              <div className={s.videoSection}>
+                <p className={s.vidLabel}>
+                  <Video size={12} className={s.vidLabelIcon} />
+                  <span>Tour virtual</span>
+                </p>
+                <div className={s.vidGrid}>
+                  {cabin.videos.map((vid, i) => {
+                    const isImage = vid.thumb && /\.(webp|jpg|jpeg|png|gif|svg)$/i.test(vid.thumb);
+                    return (
+                      <div key={i} className={s.vidThumb} onClick={() => onVideoOpen(i)}>
+                        {isImage ? (
+                          <img src={vid.thumb} alt={vid.label} className={s.vidPreview} />
+                        ) : (
+                          <video
+                            ref={el => { videoRefs.current[i] = el }}
+                            src={vid.thumb}
+                            muted
+                            loop
+                            playsInline
+                            preload="metadata"
+                            className={s.vidPreview}
+                          />
+                        )}
+                        <div className={s.playOverlay}>
+                          <div className={s.playBtn}>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="white">
+                              <polygon points="6 4 20 12 6 20" />
+                            </svg>
+                          </div>
+                        </div>
+                        <span className={s.vidTitle}>{vid.label}</span>
+                      </div>
+                    )
+                  })}
                 </div>
-                <span className={s.vidTitle}>{vid.label}</span>
               </div>
-            )
-          })}
+            )}
+
+            <div className={s.cta}>
+              <a
+                href={`https://wa.me/5492914260589?text=${waMsg}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btnBinB btnBinB-gold"
+                style={{ width: '100%' }}
+              >
+                <span>Consultar disponibilidad</span>
+                <span className="btnBinBIcon">
+                  <ArrowUpRight size={14} />
+                </span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

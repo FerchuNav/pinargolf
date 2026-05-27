@@ -33,17 +33,7 @@ export default function Hero() {
           </div>
           
           <h1 className={`${s.title} text-balance`}>
-            Tu refugio 
-            <span 
-              className="inlineImg" 
-              style={{ backgroundImage: "url('/images/exterior/pergola-flores-02.webp')" }} 
-            />
-            en el corazón de la comarca 
-            <span 
-              className="inlineImg" 
-              style={{ backgroundImage: "url('/images/pileta/pileta-exterior-01.webp')" }} 
-            />
-            serrana
+            Tu refugio en el corazón de la comarca serrana
           </h1>
           
           <p className={`${s.sub} text-pretty`}>
@@ -84,7 +74,7 @@ export default function Hero() {
             <div className={`outerShell ${s.cascadeCard} ${s.cardMid}`}>
               <div className={`innerCore ${s.cardInner}`}>
                 <img 
-                  src="/images/interior/living-comedor.webp" 
+                  src="/images/interior/living-comedor-01.webp" 
                   alt="Interior acogedor de las cabañas"
                   className={s.cascadeImg}
                 />
@@ -94,8 +84,8 @@ export default function Hero() {
             <div className={`outerShell ${s.cascadeCard} ${s.cardFront}`}>
               <div className={`innerCore ${s.cardInner}`}>
                 <img 
-                  src="/images/pileta/pileta-exterior-01.webp" 
-                  alt="Piscina exterior del resort"
+                  src="/images/pileta/complejo-pileta.webp" 
+                  alt="Piscina exterior y jacuzzi"
                   className={s.cascadeImg}
                 />
               </div>
