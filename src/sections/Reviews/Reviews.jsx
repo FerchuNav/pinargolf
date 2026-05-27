@@ -1,25 +1,54 @@
-import { useRef } from 'react'
-import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Star, Quote } from 'lucide-react'
 import s from './Reviews.module.css'
 
 const REVIEWS = [
-  { ini: 'MG', name: 'Marcela G.', origin: 'Buenos Aires · Familia con 2 hijos', stars: 5, text: 'Nos asesoraron en cada paseo y restaurante. El agua de la piscina a temperatura ideal aún con el frío serrano. Una experiencia que no esperábamos encontrar en la zona.' },
-  { ini: 'RV', name: 'Roberto V.', origin: 'Bahía Blanca · Pareja + mascota', stars: 5, text: 'La construcción Retak se nota enseguida: afuera el frío más intenso, adentro temperatura perfecta. Llegamos con nuestro perro y fue bienvenido sin problemas. Limpieza impecable.' },
-  { ini: 'LP', name: 'Laura P.', origin: 'Mar del Plata · Grupo de 5 amigos', stars: 5, text: 'El dúplex es increíble para grupos. Cada planta tiene su propio baño y el jacuzzi es el cierre perfecto después de subir el Cerro Ventana. Definitivamente volvemos.' },
+  {
+    ini: 'MG',
+    name: 'Marcela G.',
+    origin: 'Buenos Aires · Familia con hijos',
+    stars: 5,
+    text: 'La cabaña es excelente, muy bien equipada y calefaccionada. La piscina climatizada es hermosa, ideal para relajarse después de una caminata por los cerros. Lucas es un gran anfitrión, siempre predispuesto a darnos las mejores recomendaciones turísticas y gastronómicas.'
+  },
+  {
+    ini: 'RV',
+    name: 'Roberto V.',
+    origin: 'Bahía Blanca · Pareja + mascota',
+    stars: 5,
+    text: 'Excelente estadía en Parque Golf. Las cabañas son modernas, muy luminosas y con perfecta aislación térmica. El parque y los juegos para niños son fantásticos si viajas en familia. La pileta techada es espectacular.'
+  },
+  {
+    ini: 'LP',
+    name: 'Laura P.',
+    origin: 'Mar del Plata · Grupo de amigos',
+    stars: 5,
+    text: 'Fuimos en grupo de amigos y el dúplex fue comodísimo. Excelente calefacción por radiadores, camas súper confortables e hidromasaje. La ubicación cerca del arroyo Sauce Grande y la cancha de golf es inmejorable para descansar.'
+  },
+  {
+    ini: 'DK',
+    name: 'Daniel K.',
+    origin: 'La Plata · Pareja',
+    stars: 5,
+    text: 'La atención personalizada de Lucas hace la diferencia. Nos ayudó con los paseos por la comarca serrana. Las cabañas tienen todo lo necesario, cocina completa, parrilla individual y una gran tranquilidad en el predio.'
+  },
+  {
+    ini: 'SM',
+    name: 'Silvia M.',
+    origin: 'Santa Rosa · Familia con mascota',
+    stars: 5,
+    text: 'Hermoso complejo rodeado de naturaleza. Las instalaciones impecables y la piscina climatizada impecable para ir con chicos. Es pet-friendly, así que pudimos disfrutar con nuestro perro sin problemas. Volveremos sin dudas.'
+  },
+  {
+    ini: 'AT',
+    name: 'Andrés T.',
+    origin: 'Neuquén · Pareja',
+    stars: 5,
+    text: 'La aislación acústica y térmica es increíble. El hidromasaje y la comodidad de la cabaña te invitan a no salir. Ubicación excelente en el barrio Parque Golf, súper silencioso. Volveremos pronto.'
+  }
 ]
 
 export default function Reviews() {
-  const scrollRef = useRef(null)
-
-  const scroll = (direction) => {
-    if (scrollRef.current) {
-      const scrollAmount = 360
-      scrollRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth'
-      })
-    }
-  }
+  // Duplicar para crear la animacion circular continua
+  const doubleReviews = [...REVIEWS, ...REVIEWS]
 
   return (
     <section className={`section ${s.wrap}`} id="resenas">
@@ -30,26 +59,15 @@ export default function Reviews() {
             <p className="label" style={{ color: 'var(--forest-light)', marginBottom: '.5rem' }}>Lo que dicen nuestros huéspedes</p>
             <h2 className={s.h2}>Reseñas verificadas</h2>
           </div>
-          
-          {/* Botones de navegación en desktop */}
-          <div className={s.navButtons}>
-            <button className={s.navBtn} onClick={() => scroll('left')} aria-label="Deslizar a la izquierda">
-              <ChevronLeft size={20} />
-            </button>
-            <button className={s.navBtn} onClick={() => scroll('right')} aria-label="Deslizar a la derecha">
-              <ChevronRight size={20} />
-            </button>
-          </div>
         </div>
 
-        {/* Carrusel Deslizable Horizontal */}
+        {/* Carrusel Circular Marquee */}
         <div className={s.carouselWrapper}>
-          <div className={`${s.carousel} stagger`} ref={scrollRef}>
-            {REVIEWS.map((r, i) => (
+          <div className={s.carousel}>
+            {doubleReviews.map((r, i) => (
               <div 
-                key={r.name} 
-                className={`outerShell ${s.card} reveal`} 
-                style={{ transitionDelay: `${i * 0.1}s` }}
+                key={`${r.name}-${i}`} 
+                className={`outerShell ${s.card}`}
               >
                 <div className={`innerCore ${s.cardInner}`}>
                   <div className={s.cardHeader}>
@@ -93,3 +111,4 @@ export default function Reviews() {
     </section>
   )
 }
+
