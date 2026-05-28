@@ -23,13 +23,28 @@ export default function Hero() {
 
   return (
     <section className={s.hero} id="inicio">
+      {/* Video de fondo inmersivo */}
+      <div className={s.videoBgContainer}>
+        <video 
+          src="/images/hero-video.mp4" 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
+          className={s.bgVideo} 
+        />
+        <div className={s.videoOverlay} />
+      </div>
+
       <div className={`container ${s.gridContainer}`}>
-        {/* Lado Izquierdo: Textos e Informacion */}
-        <div className={`reveal-left ${s.leftCol}`}>
-          <div className={s.badge}>
-            <span className={s.badgeText}>
-              Barrio Parque Golf · Sierra de la Ventana
-            </span>
+        {/* Contenido Editorial Centrado */}
+        <div className={`reveal ${s.contentCol}`}>
+          <div className={s.logoHeroWrapper}>
+            <img 
+              src="/images/Logo_Pinar Golf.png.png?v=3" 
+              alt="Pinar Golf Sierra" 
+              className={s.logoHero} 
+            />
           </div>
           
           <h1 className={`${s.title} text-balance`}>
@@ -54,42 +69,6 @@ export default function Hero() {
                 <Play size={12} fill="currentColor" />
               </span>
             </button>
-          </div>
-        </div>
-
-        {/* Lado Derecho: Cascada Visual Z-Axis */}
-        <div className={`reveal-right ${s.rightCol}`}>
-          <div className={s.cascadeWrapper}>
-            {/* Foto 1: Exterior / Aérea */}
-            <div className={`outerShell ${s.cascadeCard} ${s.cardBack}`}>
-              <div className={`innerCore ${s.cardInner}`}>
-                <img 
-                  src="/images/exterior/vista-aerea.webp" 
-                  alt="Vista aérea del resort Pinar Golf"
-                  className={s.cascadeImg}
-                />
-              </div>
-            </div>
-            {/* Foto 2: Interior */}
-            <div className={`outerShell ${s.cascadeCard} ${s.cardMid}`}>
-              <div className={`innerCore ${s.cardInner}`}>
-                <img 
-                  src="/images/interior/living-comedor-01.webp" 
-                  alt="Interior acogedor de las cabañas"
-                  className={s.cascadeImg}
-                />
-              </div>
-            </div>
-            {/* Foto 3: Detalle / Pileta */}
-            <div className={`outerShell ${s.cascadeCard} ${s.cardFront}`}>
-              <div className={`innerCore ${s.cardInner}`}>
-                <img 
-                  src="/images/pileta/complejo-pileta.webp" 
-                  alt="Piscina exterior y jacuzzi"
-                  className={s.cascadeImg}
-                />
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -128,3 +107,4 @@ export default function Hero() {
     </section>
   )
 }
+

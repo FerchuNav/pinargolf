@@ -26,48 +26,150 @@
 /* Bento Grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
 
-/* Las clases outerShell e innerCore se manejan globalmente */
 .card {
-  padding: 0.45rem; /* Ajuste fino de padding del bisel */
+  padding: 0.45rem;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease) !important;
 }
 
-/* Ajustes finos de hover que complementan a global.css */
 .card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px);
+  box-shadow: var(--sh-lg);
 }
 
-.featuredCard {
+.cardInner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 2.2rem 2rem !important;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  justify-content: flex-start;
+}
+
+/* 1. Tarjeta Retak (span 2 en desktop) */
+.cardRetak {
   grid-column: span 2;
 }
 
-.featuredCard .cardInner {
-  background: linear-gradient(135deg, white 0%, rgba(200, 151, 58, 0.02) 100%);
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 1.8rem;
+.innerRetak {
+  display: grid !important;
+  grid-template-columns: 1fr 1.2fr;
+  padding: 0 !important; /* Permitir que la imagen toque los bordes */
+  gap: 0;
 }
 
+.retakImageCol {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
+  overflow: hidden;
+}
+
+.retakTextCol {
+  padding: 2.5rem 2.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+/* 2. Tarjeta Piscina (span 1 ancho, span 2 alto) */
+.cardPiscina {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.innerPiscina, .innerCabins {
+  padding: 0 !important;
+  position: relative;
+  justify-content: flex-end;
+}
+
+.cardBgImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+  z-index: 1;
+}
+
+.card:hover .cardBgImg {
+  transform: scale(1.05);
+}
+
+.overlayGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 19, 16, 0.95) 0%, rgba(10, 19, 16, 0.4) 60%, rgba(10, 19, 16, 0.1) 100%);
+  z-index: 2;
+}
+
+.cardContentOver {
+  position: relative;
+  z-index: 3;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+/* 3. Tarjeta Solo 5 Cabañas (span 1) */
+.cardCabins {
+  grid-column: span 1;
+}
+
+/* 4. Tarjetas minimalistas (Cargador, Pet-Friendly) */
+.cardCargador, .cardPet {
+  grid-column: span 1;
+}
+
+/* 5. Tarjeta Seguridad (span 2) */
+.cardSeguridad {
+  grid-column: span 2;
+}
+
+.innerSeguridad {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 1.8rem;
+  padding: 2.2rem 2.5rem !important;
+}
+
+.innerSeguridad .cardBody {
+  flex: 1;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+/* Componentes comunes */
 .iconWrapper {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: rgba(42, 89, 64, 0.05);
+  background: rgba(42, 89, 64, 0.06);
   color: var(--forest);
-  padding: 0.75rem;
-  border-radius: 12px;
+  padding: 0.85rem;
+  border-radius: 14px;
   flex-shrink: 0;
   transition: background-color 0.3s, color 0.3s;
-}
-
-.featuredCard .iconWrapper {
-  background: rgba(200, 151, 58, 0.12);
-  color: var(--gold);
-  padding: 1rem;
-  border-radius: 14px;
+  width: fit-content;
 }
 
 .card:hover .iconWrapper {
@@ -75,8 +177,23 @@
   color: white;
 }
 
-.card:hover.featuredCard .iconWrapper {
+.iconGold {
+  background: rgba(200, 151, 58, 0.15);
+  color: var(--gold);
+}
+
+.iconForest {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.card:hover .iconGold {
   background: var(--gold);
+  color: var(--forest);
+}
+
+.card:hover .iconForest {
+  background: white;
   color: var(--forest);
 }
 
@@ -84,12 +201,11 @@
   display: block;
 }
 
-.cardInner {
-  /* Reseteo y overrides de flexbox del innerCore */
+.cardHeader {
   display: flex;
-  flex-direction: column;
-  gap: 1.1rem;
-  padding: 2.2rem 2rem !important;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .cardBody {
@@ -100,29 +216,75 @@
 
 .cardTitle {
   font-family: var(--heading);
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   font-weight: 600;
   color: var(--forest);
 }
 
-.featuredCard .cardTitle {
-  font-size: 1.45rem;
+.textWhite {
+  color: white;
 }
 
 .cardDesc {
   font-size: 0.88rem;
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
-.featuredCard .cardDesc {
-  font-size: 0.92rem;
+.textLight {
+  color: rgba(255, 255, 255, 0.75);
 }
 
-@media (max-width: 900px) {
-  .featuredCard .cardInner {
-    flex-direction: column;
-    gap: 1.1rem;
+/* Badges */
+.cardBadge {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(10, 19, 16, 0.05);
+  color: var(--forest);
+}
+
+.cardBadgeGold {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(200, 151, 58, 0.2);
+  color: var(--gold);
+  border: 1px solid rgba(200, 151, 58, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cardRetak {
+    grid-column: span 2;
+  }
+  .cardPiscina {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .cardCabins {
+    grid-column: span 1;
+  }
+  .cardCargador {
+    grid-column: span 1;
+  }
+  .cardPet {
+    grid-column: span 1;
+  }
+  .cardSeguridad {
+    grid-column: span 2;
+  }
+  .innerRetak {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -131,7 +293,32 @@
     grid-template-columns: 1fr;
     gap: 1.2rem;
   }
-  .featuredCard {
-    grid-column: span 1;
+  .cardRetak, .cardPiscina, .cardCabins, .cardCargador, .cardPet, .cardSeguridad {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+  }
+  .innerRetak {
+    grid-template-columns: 1fr !important;
+  }
+  .retakImageCol {
+    height: 180px;
+    min-height: auto;
+  }
+  .retakTextCol {
+    padding: 1.8rem 1.5rem;
+  }
+  .cardContentOver {
+    padding: 2rem 1.5rem;
+  }
+  .innerSeguridad {
+    flex-direction: column !important;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.8rem 1.5rem !important;
+  }
+  .titleRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
   }
 }

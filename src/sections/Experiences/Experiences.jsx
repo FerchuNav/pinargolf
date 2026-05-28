@@ -3,9 +3,7 @@ import s from './Experiences.module.css'
 const EXPERIENCES = [
   { img:'/images/exterior/vista-aerea.webp',     title:'Senderismo',         desc:'Cerro Ventana, Cerro Tres Picos y decenas de circuitos en el Parque Tornquist.' },
   { img:'/images/exterior/bicicletas-parque.webp', title:'Golf & Bicicletas', desc:'Campo de golf de 9 hoyos dentro del Barrio Parque Golf. Bicicletas incluidas.' },
-  { img:'/images/exterior/picnic-arbol.webp',    title:'Cabalgatas',         desc:'Recorridos a caballo por sierras, arroyos y paisajes únicos.' },
-  { img:'/images/exterior/ventana-flores.webp',  title:'Fauna Silvestre',    desc:'Águilas, caranchos, liebres y ciervos en su hábitat natural.' },
-  { img:'/images/exterior/juegos-infantiles-01.webp', title:'Parque Infantil', desc:'Juegos de madera, tobogán y hamacas para los más chicos.' },
+  { img:'/images/exterior/juegos-infantiles-actual.jpg', title:'Parque Infantil', desc:'Juegos de madera, tobogán y hamacas para los más chicos.' },
   { img:'/images/exterior/pergola-flores-02.webp', title:'Descanso & Relax', desc:'Disfrutá de la pérgola exterior, el parque arbolado y un entorno de absoluta tranquilidad.' },
 ]
 

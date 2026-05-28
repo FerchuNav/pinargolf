@@ -32,9 +32,12 @@ export default function Navbar() {
   return (
     <header className={`${s.nav} ${scrolled ? s.scrolled : ''} ${open ? s.navOpen : ''}`}>
       <div className={s.inner}>
-        <a href="#" className={s.logo}>
-          <span className={s.logoMain}>Pinar Golf Sierra</span>
-          <span className={s.logoSub}>Cabañas Resort</span>
+        <a href="#" className={s.logo} aria-label="Volver al inicio">
+          <img 
+            src="/images/Logo_Pinar Golf.png.png?v=3" 
+            alt="Pinar Golf Sierra" 
+            className={s.logoImg} 
+          />
         </a>
         
         <nav className={s.links}>

@@ -28,15 +28,44 @@ const SPEC_ICONS = {
   safe: Lock
 }
 
+const SERVICES = [
+  {
+    t: 'Piscina cubierta climatizada 24 hs',
+    img: '/images/pileta/pileta-cubierta-actual-01.jpg',
+    alt: 'Piscina cubierta climatizada del complejo abierta 24hs'
+  },
+  {
+    t: 'Piscina exterior de temporada con solárium',
+    img: '/images/pileta/pileta-exterior-actual.jpg',
+    alt: 'Piscina exterior al aire libre con solárium y reposeras'
+  },
+  {
+    t: 'Bicicletas de paseo a disposición',
+    img: '/images/exterior/bicicletas-parque.webp',
+    alt: 'Bicicletas de uso libre y gratuito para huéspedes'
+  },
+  {
+    t: 'Juegos infantiles y amplio parque',
+    img: '/images/exterior/juegos-infantiles-actual.jpg',
+    alt: 'Área de juegos de madera para niños en el amplio parque arbolado'
+  },
+  {
+    t: 'Estacionamiento semicubierto y parrilla individual',
+    img: '/images/exterior/fachada-estacionamiento.webp',
+    alt: 'Cochera y estacionamiento semicubierto frente a las cabañas'
+  }
+]
+
 export default function Rooms() {
   const [modal, setModal] = useState(null)
   const [photoModal, setPhotoModal] = useState(null)
+  const [activeService, setActiveService] = useState(0)
 
   return (
     <section className={`section ${s.wrap}`} id="cabanas">
       <div className="container">
         <div className={`reveal ${s.hdr}`}>
-          <span className="gold-line" style={{ background: 'var(--gold)' }} />
+          <span className="gold-line" />
           <p className="label" style={{ color: 'var(--gold)', marginBottom: '.5rem' }}>Nuestras unidades</p>
           <h2 className={`${s.h2} text-balance`}>5 Cabañas + 1 Departamento</h2>
           <p className={`${s.sub} text-pretty`}>
@@ -71,19 +100,33 @@ export default function Rooms() {
                   Disfruta del entorno único de Parque Golf sin preocupaciones.
                 </p>
                 <ul className={s.infoList}>
-                  <li>Piscina cubierta climatizada 24 hs</li>
-                  <li>Piscina exterior de temporada con solárium</li>
-                  <li>Bicicletas de paseo a disposición</li>
-                  <li>Juegos infantiles y amplio parque</li>
-                  <li>Parrilla individual y estacionamiento semicubierto</li>
+                  {SERVICES.map((srv, idx) => (
+                    <li 
+                      key={idx}
+                      className={activeService === idx ? s.activeServiceItem : s.serviceItem}
+                      onMouseEnter={() => setActiveService(idx)}
+                      onClick={() => setActiveService(idx)}
+                    >
+                      <span className={s.bulletDot} />
+                      <span className={s.serviceText}>{srv.t}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
               <div className={s.infoImageCol}>
                 <img 
-                  src="/images/pileta/pileta-cubierta-01.webp" 
-                  alt="Piscina cubierta climatizada"
-                  className={s.infoImg}
+                  src={SERVICES[0].img} 
+                  alt="" 
+                  className={s.infoImgSpacer} 
                 />
+                {SERVICES.map((srv, idx) => (
+                  <img 
+                    key={idx}
+                    src={srv.img} 
+                    alt={srv.alt}
+                    className={`${s.infoImg} ${activeService === idx ? s.imgVisible : s.imgHidden}`}
+                  />
+                ))}
               </div>
             </div>
           </div>
