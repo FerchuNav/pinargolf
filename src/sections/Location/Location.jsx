@@ -49,7 +49,7 @@ export default function Location() {
             </div>
             
             <a 
-              href="https://maps.google.com/?q=Av.+Sauce+Grande+y+Los+Picaflores,+Barrio+Parque+Golf,+Sierra+de+la+Ventana" 
+              href="https://www.google.com/maps/search/Pinar+Golf+Cabañas+Resort,+Sierra+de+la+Ventana" 
               target="_blank" 
               rel="noopener noreferrer" 
               className={`btn btn-forest ${s.mapBtn}`}
@@ -60,7 +60,7 @@ export default function Location() {
           
           <div className={`reveal-right ${s.mapWrap}`}>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6535.2!2d-62.0058!3d-38.1275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95edde1d1c2c2b1d%3A0x0!2sSierra+de+la+Ventana%2C+Buenos+Aires!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1536.0!2d-61.7851332!3d-38.1400426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95eddd0e3e2a9c6d%3A0x6f8c1e2a3b4c5d6e!2sPinar+Golf!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar"
               title="Pinar Golf — Sierra de la Ventana"
               allowFullScreen 
               loading="lazy"

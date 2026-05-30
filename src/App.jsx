@@ -4,6 +4,7 @@ import Hero          from './sections/Hero/Hero'
 import Features      from './sections/Features/Features'
 import Gallery       from './sections/Gallery/Gallery'
 import Rooms         from './sections/Rooms/Rooms'
+import ElFogon       from './sections/ElFogon/ElFogon'
 import Amenities     from './sections/Amenities/Amenities'
 import Experiences   from './sections/Experiences/Experiences'
 import Comparison    from './sections/Comparison/Comparison'
@@ -47,6 +48,7 @@ export default function App() {
         <Features />
         <Gallery />
         <Rooms />
+        <ElFogon />
         <Amenities />
         <Experiences />
         <Comparison />

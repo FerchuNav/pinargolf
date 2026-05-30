@@ -81,8 +81,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 85vw;
-  max-height: 80vh;
+  max-width: 95vw;
+  max-height: 92vh;
   animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -93,7 +93,7 @@
 
 .img {
   max-width: 100%;
-  max-height: 70vh;
+  max-height: 85vh;
   object-fit: contain;
   border-radius: 12px;
   box-shadow: var(--sh-lg);
@@ -168,7 +168,7 @@
   .prev { left: 0.5rem; }
   .next { right: 0.5rem; }
   .overlay { padding: 1rem; }
-  .img { max-height: 60vh; }
+  .img { max-height: 75vh; }
   .title { font-size: 1.3rem; }
   .dots { bottom: 2.5rem; }
   .hint { display: none; } /* Hide hint on small mobiles to save space */
