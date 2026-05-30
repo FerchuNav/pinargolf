@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import { 
-  Waves, 
-  Bed, 
-  Utensils, 
-  Trees, 
-  Zap, 
+import {
+  Waves,
+  Bed,
+  Utensils,
+  Trees,
+  Zap,
   Compass,
   Sun,
   Thermometer,
@@ -93,7 +93,7 @@ const CATEGORIES = [
     items: [
       { icon: Compass, t: 'Senderismo', sub: 'Cerros y circuitos de trekking cercanos', size: 'narrow' },
       { icon: Waves, t: 'Pesca y arroyos', sub: 'Actividades en entornos naturales', size: 'narrow' },
-      { icon: Compass, t: 'Campo de Golf', sub: 'Polo de golf a menos de 3 km', size: 'wide' },
+      { icon: Compass, t: 'Campo de Golf', sub: 'Polo de golf a pocas cuadras', size: 'wide' },
     ]
   },
 ]
@@ -104,7 +104,6 @@ const HIGHLIGHTS = [
   { icon: Footprints, text: 'Mascotas admitidas sin cargo' },
   { icon: Ban, text: 'Ambientes para no fumadores' },
   { icon: Users, text: 'Cabañas familiares amplias' },
-  { icon: Languages, text: 'Atención en Español' }
 ]
 
 export default function Amenities() {
@@ -125,9 +124,9 @@ export default function Amenities() {
           {CATEGORIES.map(c => {
             const TabIcon = c.icon
             return (
-              <button 
-                key={c.key} 
-                className={`${s.tab} ${active === c.key ? s.tabActive : ''}`} 
+              <button
+                key={c.key}
+                className={`${s.tab} ${active === c.key ? s.tabActive : ''}`}
                 onClick={() => setActive(c.key)}
               >
                 <TabIcon size={14} className={s.tabIcon} />
@@ -141,9 +140,9 @@ export default function Amenities() {
           {activeCat.items.map((item, i) => {
             const ItemIcon = item.icon
             return (
-              <div 
-                key={item.t} 
-                className={`${s.chip} ${item.size === 'wide' ? s.chipWide : s.chipNarrow} ${s.fadeIn}`} 
+              <div
+                key={item.t}
+                className={`${s.chip} ${item.size === 'wide' ? s.chipWide : s.chipNarrow} ${s.fadeIn}`}
                 style={{ animationDelay: `${i * 0.06}s` }}
               >
                 <div className={s.chipInner}>

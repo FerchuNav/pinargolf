@@ -5,7 +5,7 @@ import s from './Navbar.module.css'
 const LINKS = [
   { href: '#galeria', label: 'Galería' },
   { href: '#cabanas', label: 'Cabañas' },
-  { href: '#fogon', label: 'El Fogón' },
+  { href: '#quincho', label: 'El Quincho' },
   { href: '#servicios', label: 'Servicios' },
   { href: '#resenas', label: 'Reseñas' },
   { href: '#ubicacion', label: 'Ubicación' },

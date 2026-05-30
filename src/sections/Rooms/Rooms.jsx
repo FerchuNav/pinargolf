@@ -30,6 +30,11 @@ const SPEC_ICONS = {
 
 const SERVICES = [
   {
+    t: 'Quincho totalmente equipado para 24 personas',
+    img: '/images/fogon/fogon-mesas-comedor.webp',
+    alt: 'Quincho comedor y asador con mesas para grupos de hasta 24 personas'
+  },
+  {
     t: 'Piscina cubierta climatizada 24 hs',
     img: '/images/pileta/pileta-cubierta-actual-01.jpg',
     alt: 'Piscina cubierta climatizada del complejo abierta 24hs'

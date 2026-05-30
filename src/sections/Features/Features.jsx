@@ -1,4 +1,4 @@
-import { Layers, Waves, Trees, Footprints, Zap, ShieldCheck } from 'lucide-react'
+import { Layers, Waves, Trees, Footprints, Zap, ShieldCheck, Utensils } from 'lucide-react'
 import s from './Features.module.css'
 
 export default function Features() {
@@ -16,6 +16,33 @@ export default function Features() {
         </div>
         
         <div className={`stagger ${s.grid}`}>
+          
+          {/* Tarjeta 1: El Quincho (span 2 en desktop) */}
+          <div className={`reveal outerShell ${s.card} ${s.cardQuincho}`}>
+            <div className={`innerCore ${s.cardInner} ${s.innerQuincho}`}>
+              <div className={s.retakImageCol}>
+                <img 
+                  src="/images/fogon/fogon-mesas-comedor.webp" 
+                  alt="Mesas amplias del Quincho y Fogón en Pinar Golf"
+                  className={s.cardBgImg}
+                />
+              </div>
+              <div className={s.retakTextCol}>
+                <div className={s.cardHeader}>
+                  <div className={s.iconWrapper}>
+                    <Utensils className={s.icon} size={22} />
+                  </div>
+                  <span className={s.cardBadge}>Capacidad 24 Personas</span>
+                </div>
+                <div className={s.cardBody}>
+                  <h3 className={s.cardTitle}>El Quincho</h3>
+                  <p className={s.cardDesc}>
+                    Un espectacular salón comedor de uso común, ideal para asados y encuentros de grupos grandes. Totalmente equipado con cocina de 6 hornallas, heladera, freezer, vajilla completa, parrilla a leña y juegos de mesa.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
           
           {/* Tarjeta 1: Construcción Retak (span 2 en desktop) */}
           <div className={`reveal outerShell ${s.card} ${s.cardRetak}`}>

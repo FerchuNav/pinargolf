@@ -16,7 +16,9 @@ const COMPARISONS = [
     feature: 'Climatización',
     trad: 'Sistemas inestables y calefactores individuales ineficientes que generan alto consumo y baja cobertura.',
     pg: 'Calefacción central por radiadores de agua en todos los ambientes + equipos split de aire acondicionado.',
-    highlight: false
+    highlight: true,
+    image: '/images/amenities/radiador-aire.webp',
+    imagePos: 'right'
   },
   {
     icon: Waves,

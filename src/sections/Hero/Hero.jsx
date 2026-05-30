@@ -48,12 +48,12 @@ export default function Hero() {
           </div>
           
           <h1 className={`${s.title} text-balance`}>
-            Tu refugio en el corazón de la comarca serrana
+            El lugar donde las familias y amigos se reúnen para crear recuerdos inolvidables, todo el año.
           </h1>
           
           <p className={`${s.sub} text-pretty`}>
-            Cabañas y departamentos de diseño en un entorno natural único. Piscina climatizada cubierta, 
-            jacuzzi exterior y acceso exclusivo al golf y al río Sauce Grande.
+            Reservá una o varias cabañas y disfrutá de espacios pensados para compartir: quincho para 24 personas 
+            y piscina cubierta climatizada los 365 días del año.
           </p>
           
           <div className={s.btns}>

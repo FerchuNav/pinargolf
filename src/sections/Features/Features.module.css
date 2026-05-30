@@ -51,12 +51,12 @@
   justify-content: flex-start;
 }
 
-/* 1. Tarjeta Retak (span 2 en desktop) */
-.cardRetak {
+/* 1. Tarjeta Retak (span 2 en desktop) y Tarjeta Quincho */
+.cardRetak, .cardQuincho {
   grid-column: span 2;
 }
 
-.innerRetak {
+.innerRetak, .innerQuincho {
   display: grid !important;
   grid-template-columns: 1fr 1.2fr;
   padding: 0 !important; /* Permitir que la imagen toque los bordes */
@@ -264,7 +264,7 @@
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .cardRetak {
+  .cardRetak, .cardQuincho {
     grid-column: span 2;
   }
   .cardPiscina {
@@ -283,7 +283,7 @@
   .cardSeguridad {
     grid-column: span 2;
   }
-  .innerRetak {
+  .innerRetak, .innerQuincho {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -293,11 +293,11 @@
     grid-template-columns: 1fr;
     gap: 1.2rem;
   }
-  .cardRetak, .cardPiscina, .cardCabins, .cardCargador, .cardPet, .cardSeguridad {
+  .cardRetak, .cardQuincho, .cardPiscina, .cardCabins, .cardCargador, .cardPet, .cardSeguridad {
     grid-column: span 1 !important;
     grid-row: span 1 !important;
   }
-  .innerRetak {
+  .innerRetak, .innerQuincho {
     grid-template-columns: 1fr !important;
   }
   .retakImageCol {

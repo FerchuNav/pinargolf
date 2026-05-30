@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import Navbar        from './components/Navbar/Navbar'
 import Hero          from './sections/Hero/Hero'
+import AboutUs       from './sections/AboutUs/AboutUs'
 import Features      from './sections/Features/Features'
 import Gallery       from './sections/Gallery/Gallery'
 import Rooms         from './sections/Rooms/Rooms'
-import ElFogon       from './sections/ElFogon/ElFogon'
+import ElQuincho     from './sections/ElQuincho/ElQuincho'
 import Amenities     from './sections/Amenities/Amenities'
 import Experiences   from './sections/Experiences/Experiences'
 import Comparison    from './sections/Comparison/Comparison'
@@ -45,10 +46,11 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <AboutUs />
         <Features />
         <Gallery />
         <Rooms />
-        <ElFogon />
+        <ElQuincho />
         <Amenities />
         <Experiences />
         <Comparison />
