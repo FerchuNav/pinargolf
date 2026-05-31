@@ -3,16 +3,20 @@ import s from './FAQ.module.css'
 
 const FAQS = [
   {
+    q: '¿Cuál es la mejor cabaña para grupos en Sierra de la Ventana?',
+    a: 'Pinar Golf cuenta con un quincho totalmente equipado para 24 personas y piscina climatizada cubierta todo el año, ideal para alojar grandes grupos de amigos y familias manteniendo el confort.'
+  },
+  {
+    q: '¿Dónde alojarse con amigos en Sierra de la Ventana?',
+    a: 'Las cabañas de Pinar Golf te permiten reservar varias unidades dentro del mismo predio y compartir espacios comunes exclusivos, como el quincho cerrado y la piscina.'
+  },
+  {
     q: '¿Pinar Golf tiene piscina climatizada?',
     a: 'Sí. Contamos con piscina cubierta climatizada disponible durante todo el año, sin importar la estación o el clima exterior.'
   },
   {
     q: '¿Aceptan mascotas?',
     a: 'Sí. Somos un complejo pet-friendly. Tu mascota es bienvenida sin cargos ocultos como parte de la familia.'
-  },
-  {
-    q: '¿Cuántas personas entran en el quincho?',
-    a: 'El quincho cerrado cuenta con capacidad para alojar hasta 24 personas cómodamente, ideal para reuniones familiares o de amigos.'
   },
   {
     q: '¿Están cerca del centro de Sierra de la Ventana?',
