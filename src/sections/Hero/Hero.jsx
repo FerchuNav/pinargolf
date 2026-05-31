@@ -27,6 +27,7 @@ export default function Hero() {
       <div className={s.videoBgContainer}>
         <video 
           src="/images/hero-video.mp4" 
+          poster="/images/exterior/vista-aerea.webp"
           autoPlay 
           loop 
           muted 
@@ -44,6 +45,7 @@ export default function Hero() {
               src="/images/Logo_Pinar Golf.png.png?v=3" 
               alt="Pinar Golf Sierra" 
               className={s.logoHero} 
+              fetchPriority="high"
             />
           </div>
           
