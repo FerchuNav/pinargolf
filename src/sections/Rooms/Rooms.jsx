@@ -278,7 +278,7 @@ function CabinCard({ cabin, onVideoOpen, onPhotoOpen }) {
                             muted
                             loop
                             playsInline
-                            preload="metadata"
+                            preload="none"
                             className={s.vidPreview}
                           />
                         )}
