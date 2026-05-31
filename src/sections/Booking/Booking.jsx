@@ -29,10 +29,10 @@ export default function Booking() {
         <div className={`reveal ${s.hdr}`}>
           <span className="gold-line" />
           <p className="label" style={{ color: 'rgba(255,255,255,.55)', marginBottom: '.5rem' }}>
-            Reserva directa · Sin comisiones · Sin intermediarios
+            Alquiler directo · Sin comisiones · Sin intermediarios
           </p>
-          <h2 className={s.h2}>Reservá tu estadía</h2>
-          <p className={s.sub}>Completá el formulario y te confirmamos disponibilidad al instante por WhatsApp.</p>
+          <h2 className={s.h2}>Reservá tu cabaña en Sierra de la Ventana</h2>
+          <p className={s.sub}>Consultá precios y disponibilidad para tu próxima escapada. Te confirmamos al instante por WhatsApp.</p>
         </div>
         
         {/* Contenedor del formulario con Double-Bezel */}

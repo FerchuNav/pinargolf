@@ -71,12 +71,10 @@ export default function Rooms() {
       <div className="container">
         <div className={`reveal ${s.hdr}`}>
           <span className="gold-line" />
-          <p className="label" style={{ color: 'var(--gold)', marginBottom: '.5rem' }}>Nuestras unidades</p>
-          <h2 className={`${s.h2} text-balance`}>5 Cabañas + 1 Departamento</h2>
+          <p className="label" style={{ color: 'var(--gold)', marginBottom: '.5rem' }}>Alquiler de Cabañas</p>
+          <h2 className={`${s.h2} text-balance`}>5 Cabañas y 1 Departamento en Alquiler</h2>
           <p className={`${s.sub} text-pretty`}>
-            Todas las unidades cuentan con construcción Retak de alta eficiencia térmica,
-            piscina cubierta climatizada y al aire libre, y acceso directo al golf.
-            Diseñadas para el descanso absoluto en la Comarca.
+            Si buscás alojamiento en Sierra de la Ventana, nuestras unidades son ideales para tu descanso. Cuentan con construcción térmica Retak, piscina cubierta climatizada, parque y acceso directo al golf.
           </p>
         </div>
 
