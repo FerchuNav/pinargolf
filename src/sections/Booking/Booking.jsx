@@ -46,14 +46,14 @@ export default function Booking() {
             )}
 
             <div className={s.row}>
-              <Fld label="Check-in" icon={Calendar}>
-                <input type="date" value={f.ci} min={today()} onChange={set('ci')} />
+              <Fld label="Check-in" id="ci" icon={Calendar}>
+                <input id="ci" type="date" value={f.ci} min={today()} onChange={set('ci')} />
               </Fld>
-              <Fld label="Check-out" icon={Calendar}>
-                <input type="date" value={f.co} min={f.ci || today()} onChange={set('co')} />
+              <Fld label="Check-out" id="co" icon={Calendar}>
+                <input id="co" type="date" value={f.co} min={f.ci || today()} onChange={set('co')} />
               </Fld>
-              <Fld label="Huéspedes" icon={Users}>
-                <select value={f.hues} onChange={set('hues')}>
+              <Fld label="Huéspedes" id="hues" icon={Users}>
+                <select id="hues" value={f.hues} onChange={set('hues')}>
                   {['1 persona', '2 personas', '3 personas', '4 personas', '5 personas', '6 personas'].map(o => (
                     <option key={o}>{o}</option>
                   ))}
@@ -62,11 +62,11 @@ export default function Booking() {
             </div>
             
             <div className={s.row}>
-              <Fld label="Tu nombre y apellido" icon={User}>
-                <input type="text" placeholder="Ej: Juan Pérez" value={f.nom} onChange={set('nom')} />
+              <Fld label="Tu nombre y apellido" id="nom" icon={User}>
+                <input id="nom" type="text" placeholder="Ej: Juan Pérez" value={f.nom} onChange={set('nom')} />
               </Fld>
-              <Fld label="¿Traés mascota?" icon={Footprints}>
-                <select value={f.masc} onChange={set('masc')}>
+              <Fld label="¿Traés mascota?" id="masc" icon={Footprints}>
+                <select id="masc" value={f.masc} onChange={set('masc')}>
                   <option value="No">No, sin mascota</option>
                   <option value="Sí, con mascota">Sí, viajo con mascota</option>
                 </select>
@@ -89,10 +89,10 @@ export default function Booking() {
   )
 }
 
-function Fld({ label, icon: Icon, children }) {
+function Fld({ label, id, icon: Icon, children }) {
   return (
     <div className={s.fld}>
-      <label className={s.fldLabel}>
+      <label htmlFor={id} className={s.fldLabel}>
         {Icon && <Icon size={14} className={s.fldIcon} />}
         <span>{label}</span>
       </label>
