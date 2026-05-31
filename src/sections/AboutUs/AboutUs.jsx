@@ -30,7 +30,7 @@ export default function AboutUs() {
             </h2>
 
             <p className={s.lead}>
-              En nuestro complejo de cabañas en Sierra de la Ventana, no solo disfrutás de la tranquilidad de la naturaleza, sino también de espacios exclusivos para compartir momentos únicos con quienes más querés.
+              Si estás buscando <strong>cabañas para alquilar en Sierra de la Ventana</strong>, en nuestro complejo no solo vas a disfrutar de la tranquilidad de la naturaleza, sino también de espacios exclusivos para compartir momentos únicos con quienes más querés.
             </p>
 
             <p className={s.body}>
