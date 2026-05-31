@@ -30,8 +30,7 @@ export default function AboutUs() {
             </h2>
 
             <p className={s.lead}>
-              En Pinar Golf Sierra no solo disfrutás de la tranquilidad de la naturaleza, sino también
-              de espacios exclusivos para compartir momentos únicos con quienes más querés.
+              En nuestro complejo de cabañas en Sierra de la Ventana, no solo disfrutás de la tranquilidad de la naturaleza, sino también de espacios exclusivos para compartir momentos únicos con quienes más querés.
             </p>
 
             <p className={s.body}>
@@ -48,7 +47,7 @@ export default function AboutUs() {
             <div className={s.highlight}>
               <Users size={20} />
               <span>
-                Reuní a tu grupo, reservá una o varias de nuestras cabañas y viví una experiencia diferente en Sierra de la Ventana.
+                Reuní a tu grupo, reservá una o varias de nuestras 5 cabañas y viví una experiencia diferente en Sierra de la Ventana.
               </span>
             </div>
 
