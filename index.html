@@ -36,57 +36,85 @@
     <meta name="twitter:description" content="5 cabañas premium con piscina climatizada 24hs, jacuzzi y el Parque Tornquist a pasos." />
     <meta name="twitter:image" content="https://www.pinargolf.com.ar/images/exterior/vista-aerea.webp" />
 
-    <!-- JSON-LD Structured Data -->
+    <!-- JSON-LD Structured Data for AI & Search Engines -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LodgingBusiness",
-      "name": "Pinar Golf Cabañas Resort",
-      "url": "https://www.pinargolf.com.ar",
-      "image": "https://www.pinargolf.com.ar/images/exterior/vista-aerea.webp",
-      "description": "Si estás buscando cabañas para alquilar en Sierra de la Ventana, Pinar Golf Cabañas Resort es tu mejor opción. 5 cabañas premium con piscina climatizada 24hs, quincho para 24 personas y jacuzzi exterior.",
-      "telephone": "+5492914260589",
-      "email": "contacto@pinargolf.com.ar",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Av. Sauce Grande y Los Picaflores, Barrio Parque Golf",
-        "addressLocality": "Sierra de la Ventana",
-        "addressRegion": "Buenos Aires",
-        "addressCountry": "AR",
-        "postalCode": "8168"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -38.1275,
-        "longitude": -62.0058
-      },
-      "priceRange": "$$",
-      "currenciesAccepted": "ARS",
-      "paymentAccepted": "Efectivo, Transferencia bancaria",
-      "checkinTime": "15:00",
-      "checkoutTime": "10:00",
-      "petsAllowed": true,
-      "numberOfRooms": 6,
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "8.8",
-        "reviewCount": "120",
-        "bestRating": "10",
-        "worstRating": "1"
-      },
-      "sameAs": [
-        "https://www.instagram.com/pinargolfsierra",
-        "https://www.facebook.com/pinargolfsierra"
-      ],
-      "amenityFeature": [
-        {"@type": "LocationFeatureSpecification", "name": "Piscina cubierta climatizada 24hs", "value": true},
-        {"@type": "LocationFeatureSpecification", "name": "Piscina al aire libre", "value": true},
-        {"@type": "LocationFeatureSpecification", "name": "Jacuzzi exterior", "value": true},
-        {"@type": "LocationFeatureSpecification", "name": "Cargador de auto eléctrico", "value": true},
-        {"@type": "LocationFeatureSpecification", "name": "Pet-friendly sin cargo", "value": true},
-        {"@type": "LocationFeatureSpecification", "name": "Quincho cerrado con parrilla", "value": true},
-        {"@type": "LocationFeatureSpecification", "name": "Bicicletas gratuitas", "value": true},
-        {"@type": "LocationFeatureSpecification", "name": "Construcción térmica Retak", "value": true}
+      "@graph": [
+        {
+          "@type": "LodgingBusiness",
+          "name": "Pinar Golf Cabañas Resort",
+          "url": "https://www.pinargolf.com.ar",
+          "image": "https://www.pinargolf.com.ar/images/exterior/vista-aerea.webp",
+          "description": "Si estás buscando cabañas para alquilar en Sierra de la Ventana, Pinar Golf Cabañas Resort es tu mejor opción. 5 cabañas premium con piscina climatizada 24hs, quincho para 24 personas y jacuzzi exterior.",
+          "telephone": "+5492914260589",
+          "email": "contacto@pinargolf.com.ar",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Av. Sauce Grande y Los Picaflores, Barrio Parque Golf",
+            "addressLocality": "Sierra de la Ventana",
+            "addressRegion": "Buenos Aires",
+            "addressCountry": "AR",
+            "postalCode": "8168"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -38.1275,
+            "longitude": -62.0058
+          },
+          "priceRange": "$$",
+          "currenciesAccepted": "ARS",
+          "paymentAccepted": "Efectivo, Transferencia bancaria",
+          "checkinTime": "15:00",
+          "checkoutTime": "10:00",
+          "petsAllowed": true,
+          "numberOfRooms": 6,
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "8.8",
+            "reviewCount": "120",
+            "bestRating": "10",
+            "worstRating": "1"
+          },
+          "sameAs": [
+            "https://www.instagram.com/pinargolfsierra",
+            "https://www.facebook.com/pinargolfsierra"
+          ],
+          "amenityFeature": [
+            {"@type": "LocationFeatureSpecification", "name": "Piscina cubierta climatizada 24hs", "value": true},
+            {"@type": "LocationFeatureSpecification", "name": "Quincho cerrado con parrilla", "value": true},
+            {"@type": "LocationFeatureSpecification", "name": "Pet-friendly sin cargo", "value": true}
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Pinar Golf tiene piscina climatizada?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí. Contamos con piscina cubierta climatizada disponible durante todo el año, sin importar la estación o el clima exterior."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Aceptan mascotas?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí. Somos un complejo pet-friendly. Tu mascota es bienvenida sin cargos adicionales."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cuántas personas entran en el quincho?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "El quincho cerrado cuenta con capacidad para alojar hasta 24 personas cómodamente, ideal para familias."
+              }
+            }
+          ]
+        }
       ]
     }
     </script>

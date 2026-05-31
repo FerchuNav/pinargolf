@@ -47,13 +47,17 @@ export default function Hero() {
             />
           </div>
           
+          <div className={s.trustBadge}>
+            Renovado y mejorado continuamente
+          </div>
+
           <h1 className={`${s.title} text-balance`}>
-            El lugar donde las familias y amigos se reúnen para crear recuerdos inolvidables, todo el año.
+            Cabañas en Sierra de la Ventana con Piscina Climatizada Todo el Año
           </h1>
           
           <p className={`${s.sub} text-pretty`}>
-            Reservá una o varias cabañas y disfrutá de espacios pensados para compartir: quincho para 24 personas 
-            y piscina cubierta climatizada los 365 días del año.
+            Disfrutá de nuestras 5 cabañas, amplios espacios verdes, quincho equipado para 24 personas y una piscina cubierta climatizada ideal para cualquier estación.<br/><br/>
+            Perfecto para familias, grupos de amigos y escapadas inolvidables.
           </p>
           
           <div className={s.btns}>

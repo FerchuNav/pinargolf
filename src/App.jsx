@@ -6,10 +6,12 @@ import Features      from './sections/Features/Features'
 import Gallery       from './sections/Gallery/Gallery'
 import Rooms         from './sections/Rooms/Rooms'
 import ElQuincho     from './sections/ElQuincho/ElQuincho'
+import Groups        from './sections/Groups/Groups'
 import Amenities     from './sections/Amenities/Amenities'
 import Experiences   from './sections/Experiences/Experiences'
 import Comparison    from './sections/Comparison/Comparison'
 import Reviews       from './sections/Reviews/Reviews'
+import FAQ           from './sections/FAQ/FAQ'
 import Booking       from './sections/Booking/Booking'
 import Location      from './sections/Location/Location'
 import Footer        from './components/Footer/Footer'
@@ -51,10 +53,12 @@ export default function App() {
         <Gallery />
         <Rooms />
         <ElQuincho />
+        <Groups />
         <Amenities />
         <Experiences />
         <Comparison />
         <Reviews />
+        <FAQ />
         <Booking />
         <Location />
       </main>
