@@ -67,8 +67,8 @@ export default function AboutUs() {
                 src="/images/fogon/asador-cordero.mp4"
                 muted
                 loop
-                autoPlay
                 playsInline
+                preload="none"
                 poster="/images/fogon/asador-cordero-Cover.jpg"
                 className={s.videoPreview}
               />
