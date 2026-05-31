@@ -37,6 +37,8 @@ export default function Navbar() {
           <img 
             src="/images/Logo_Pinar Golf.png.png?v=3" 
             alt="Pinar Golf Sierra" 
+            width="500"
+            height="187"
             className={s.logoImg} 
           />
         </a>
